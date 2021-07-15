@@ -5,3 +5,19 @@ body {
     box-sizing: border-box;
     font-size: 16px;
 }
+
+.desktop-nav .logo {
+    width: 100px;
+}
+
+.desktop-nav .nav-link {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
