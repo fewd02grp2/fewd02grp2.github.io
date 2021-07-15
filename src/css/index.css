@@ -8,7 +8,7 @@ html, body {
 
 
 .mobile-container {
-    padding: 0 10%;
+    padding: 0 7.5%;
 }
 
 /* mobile-nav styling */
@@ -30,8 +30,8 @@ html, body {
 /* greeting-msg styling */
 section.greeting-msg h1 {
     font-size: 2.5em;
-    margin-top: 0.5em;
-    margin-bottom: 0.2em;
+    margin-top: 0.25em;
+    margin-bottom: 0;
 }
 
 /* day-info styling */
@@ -40,7 +40,7 @@ section.day-info {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    height: 65px;
+    height: 50px;
     margin-bottom: 0.5em;
 }
 .day-info .weather {
@@ -55,10 +55,12 @@ section.day-info {
 }
 .day-info .date{
     background-color: hsl(0, 0%, 75%);
-    width: 40%;
+    width: 135px;
     font-size: 1.2em;
     padding: 5px 15px;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 /* task-card-container styling */
@@ -124,6 +126,26 @@ section.day-info {
 .task-card-body .assign {
     font-size: 0.8em;
 }
+
+/* footer styling */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 65px;
+}
+footer i {
+    font-size: 2em;
+}
+footer #add-task-lg {
+    color: rgb(67, 216, 67);
+    font-size: 3.5em;
+}
+
 
 @media screen and (min-width: 768px) {
     /* Desktop CSS goes here */
