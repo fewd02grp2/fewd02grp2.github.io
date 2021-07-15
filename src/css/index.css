@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-container {
+        padding: 0 10%;
+    }
+
+    /* header styling */
+    .header {
+        margin-top: 2em;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    .logo i {
+        font-size: 2em;
+        margin-right: 0.25em;
+    }
+    .logo span {
+        font-size: 1.5em;
+    }
+
+    /* greeting-msg styling */
+    section.greeting-msg h1 {
+        font-size: 2.5em;
+        margin-top: 0.5em;
+    }
+}
