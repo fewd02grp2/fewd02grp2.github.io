@@ -40,7 +40,8 @@ section.day-info {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    margin-bottom: 1em;
+    height: 65px;
+    margin-bottom: 0.5em;
 }
 .day-info .weather {
     background-color: hsl(0, 0%, 75%);
@@ -54,7 +55,7 @@ section.day-info {
 }
 .day-info .date{
     background-color: hsl(0, 0%, 75%);
-    width: 35%;
+    width: 40%;
     font-size: 1.2em;
     padding: 5px 15px;
     border-radius: 10px;
@@ -73,6 +74,7 @@ section.day-info {
     border-radius: 10px;
     display: flex;
     padding: 15px;
+    margin-bottom: 0.75em;
 }
 .task-card-status {
     display: flex;
@@ -102,8 +104,13 @@ section.day-info {
     padding: 2px 10px;
     color: white;
     font-size: 0.8em;
-    background-color: red;
     border-radius: 5px;
+}
+.task-card-body .priority-high {
+    background-color: red;
+}
+.task-card-body .priority-low {
+    background-color: green;
 }
 .task-card-body .description {
     margin-top: 0.5em;
