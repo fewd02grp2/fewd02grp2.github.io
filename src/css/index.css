@@ -11,8 +11,8 @@ html, body {
     padding: 0 10%;
 }
 
-/* header styling */
-.header {
+/* mobile-nav styling */
+.mobile-nav {
     margin-top: 2em;
 }
 .logo {
