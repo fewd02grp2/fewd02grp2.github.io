@@ -40,6 +40,7 @@ html, body {
         justify-content: flex-end;
         align-items: center;
         width: 100%;
+        margin-bottom: 1em;
     }
     .day-info .weather {
         background-color: hsl(0, 0%, 75%);
@@ -57,5 +58,63 @@ html, body {
         font-size: 1.2em;
         padding: 5px 15px;
         border-radius: 10px;
+    }
+
+    /* task-card-container styling */
+    .task-card-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* task-card styling */
+    .task-card {
+        width: 100%;
+        background-color: hsl(0, 0%, 75%);
+        border-radius: 10px;
+        display: flex;
+        padding: 15px;
+    }
+    .task-card-status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+    }
+    .task-card-status i {
+        font-size: 2.5em;
+    }
+    .task-card-body {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding-left: 15px;
+    }
+    .task-card-body > div {
+        display: flex;
+        align-items: center;
+    }
+    .task-card-body .title {
+        font-weight: 700;
+        font-size: 1.2em;
+        margin-right: 0.5em;
+    }
+    .task-card-body .priority {
+        padding: 2px 10px;
+        color: white;
+        font-size: 0.8em;
+        background-color: red;
+        border-radius: 5px;
+    }
+    .task-card-body .description {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        color:hsl(0, 0%, 40%);
+        font-size: 0.8em;
+    }
+    .task-card-body .due {
+        font-size: 0.8em;
+    }
+    .task-card-body .assign {
+        font-size: 0.8em;
     }
 }
