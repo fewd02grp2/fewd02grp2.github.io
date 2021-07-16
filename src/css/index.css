@@ -7,7 +7,7 @@ html, body {
 }
 
 
-.mobile-container {
+.container {
     padding: 0 7.5%;
 }
 
@@ -25,6 +25,11 @@ html, body {
 }
 .logo span {
     font-size: 1.5em;
+}
+
+/* desktop-nav styling */
+.desktop-nav {
+    display: none;
 }
 
 /* greeting-msg styling */
@@ -71,7 +76,6 @@ section.day-info {
 
 /* task-card styling */
 .task-card {
-    width: 100%;
     background-color: hsl(0, 0%, 75%);
     border-radius: 10px;
     display: flex;
@@ -148,5 +152,30 @@ footer #add-task-lg {
 
 
 @media screen and (min-width: 768px) {
-    /* Desktop CSS goes here */
+    /* mobile-nav styling */
+    .mobile-nav {
+        display: none;
+    }
+
+    /* desktop-nav styling */
+    .desktop-nav {
+        display: flex;
+        margin-top: 2em;
+        justify-content: space-between;
+        align-items: center;
+        height: 65px;
+    }
+    .nav-links {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-links a {
+        color: black;
+        text-decoration: none;
+        padding-bottom: 5px;
+    }
+    .nav-links a:hover {
+        border-bottom: 1px solid black;
+    }
 }
