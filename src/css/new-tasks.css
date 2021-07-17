@@ -46,21 +46,38 @@ section.new-task-form {
 .new-task-form form {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+}
+.new-task-form i {
     font-size: 2.5em;
 }
 .new-task-form form div {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    max-width: 80%;
+    margin-bottom: 20px;
 }
 .new-task-form form div label {
-    margin-right: 5vw;
+    margin-right: 30px;
 }
-.new-task-form input[type="text"] {
-    width: 60%;
+.new-task-form input {
+    width: 230px;
     height: 2rem;
     font-size: 1.25rem;
+    border-radius: 10px;
+}
+.new-task-form div div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.new-task-form div div span {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+.new-task-form textarea {
+    width: 230px;
     border-radius: 10px;
 }
