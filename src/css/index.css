@@ -218,7 +218,7 @@ footer #add-task-lg {
         flex-direction: column;
         /* justify-content: center; */
         padding-left: 3vw;
-        width: 20vw;
+        width: 25vw;
         background-color: hsl(0, 0%, 95%);
     }
 
@@ -284,7 +284,7 @@ footer #add-task-lg {
     .desktop-main-body {
         display: flex;
         flex-direction: column;
-        width: 80vw;
+        width: 75vw;
         padding-left: 3vw;
         padding-bottom: 3vh;
     }
