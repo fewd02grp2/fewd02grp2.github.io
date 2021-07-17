@@ -5,30 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- add google font link -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!-- add google font link again Merriweather and Sacramento-->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Sacramento&display=swap" rel="stylesheet">
-    <link href="../css/todolist-login.css" rel="stylesheet">
+    <link href="sample4-style.css" rel="stylesheet">
     <title>To-do-list-login</title>
 </head>
 
 <body>
     <div class="login-container">
         <div class="slogan">
-            <p>The essential to-do list<span>for Everyone</span></p>
+            <!-- add span -->
+            <p>The essential to-do list <span>for Everyone</span></p>
         </div>
         <div class="login">
             <div class="logo">
                 <h3>Logo</h3>
             </div>
-            <!-- Still don't have logo -->
             <form class="email" action="Todolist-login.html" method="POST">
                 <div class="login-info">
+                    <!-- add id "login-pwd/email" -->
                     <label for="email" id="login-email">email address: </label>
-                    <input type="email" name="email" id="email"> <br><br>
+                    <input type="email" name="email" class="email-blank"> <br><br>
                 </div>
                 <div class="login-info">
                     <label for="pwd" id="login-pwd">password: </label>
-                    <input type="password" id="pwd" name="pwd">
+                    <input type="password" class="pwd-blank" name="pwd">
                 </div>
                 <!-- add div called button -->
                 <div class="login-button">
