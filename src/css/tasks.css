@@ -15,6 +15,10 @@ a {
     color: inherit;
 }
 
+.main-body {
+    margin: 24px 32px;
+}
+
 .navbar-navbar {
     display: flex;
     justify-content: space-between;
