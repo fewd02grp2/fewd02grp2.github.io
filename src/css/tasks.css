@@ -7,34 +7,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-a:link {
-    text-decoration: none;
-}
-
-a {
-    color: inherit;
-}
-
-.main-body {
-    margin: 24px 32px;
-}
-
-.navbar-navbar {
-    display: flex;
-    justify-content: space-between;
-    display: none;
-}
-
-.desktop-nav {
-    display: flex;
-    justify-content: space-between;
-}
-
 .side-bar {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     margin: 24px 32px;
+    width: 30%;
 }
 
 .status-position {
@@ -43,6 +21,10 @@ a {
     justify-content: space-around;
     align-content: space-around;
     flex-direction: column;
+}
+
+.half-part-container {
+    width: 70%;
 }
 
 .datenweather.col {
@@ -110,9 +92,6 @@ footer #add-task-lg {
 }
 
 @media screen and (max-width:768px) {
-    nav.navbar-navbar {
-        display: none;
-    }
     .side-bar {
         display: none;
     }
