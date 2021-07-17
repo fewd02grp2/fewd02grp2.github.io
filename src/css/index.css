@@ -6,18 +6,13 @@ html, body {
     font-family:Arial, Helvetica, sans-serif;
 }
 
-
-.mobile-container {
-    padding: 0 7.5%;
-}
-
-/* mobile-nav styling */
-.mobile-nav {
-    margin-top: 2em;
-}
+/* logo styling */
 .logo {
     display: flex;
     align-items: center;
+    padding: 1em 0 1em 2em;
+    background-color:hsl(0, 0%, 85%);
+    margin-bottom: 2vh;
 }
 .logo i {
     font-size: 2em;
@@ -27,15 +22,33 @@ html, body {
     font-size: 1.5em;
 }
 
+/* container styling */
+.container {
+    padding: 0 7.5%;
+    margin-top: 0;
+}
+
+/* desktop-nav styling */
+.desktop-nav {
+    display: none;
+}
+
+.profile {
+    display: none;
+}
+.side-bar {
+    display: none;
+}
+
 /* greeting-msg styling */
-section.greeting-msg h1 {
-    font-size: 2.5em;
-    margin-top: 0.25em;
+.greeting-msg h1 {
+    font-size: 2.25em;
+    margin-top: 0;
     margin-bottom: 0;
 }
 
 /* day-info styling */
-section.day-info {
+.day-info {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -43,10 +56,15 @@ section.day-info {
     height: 50px;
     margin-bottom: 0.5em;
 }
+.day-info span {
+    display: none;
+}
 .day-info .weather {
     background-color: hsl(0, 0%, 75%);
     border-radius: 10px;
     margin-right: 5px;
+    height: 35px;
+    width: 35px;
 }
 .day-info .weather i {
     color: black;
@@ -57,10 +75,16 @@ section.day-info {
     background-color: hsl(0, 0%, 75%);
     width: 135px;
     font-size: 1.2em;
-    padding: 5px 15px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+/* categories styling */
+.categories {
+    display: none;
 }
 
 /* task-card-container styling */
@@ -71,12 +95,11 @@ section.day-info {
 
 /* task-card styling */
 .task-card {
-    width: 100%;
     background-color: hsl(0, 0%, 75%);
     border-radius: 10px;
     display: flex;
     padding: 15px;
-    margin-bottom: 0.75em;
+    margin-bottom: 1em;
 }
 .task-card-status {
     display: flex;
@@ -148,5 +171,196 @@ footer #add-task-lg {
 
 
 @media screen and (min-width: 768px) {
-    /* Desktop CSS goes here */
+    .logo {
+        display: none;
+    }
+
+    /* container styling */
+    .container {
+        padding-right: 3vw;
+        padding-left: 0;
+        display: flex;
+        height: 100vh;
+    }
+
+    /* mobile-nav styling */
+    .mobile-nav {
+        display: none;
+    }
+
+    /* desktop-nav styling */
+    .desktop-nav {
+        display: flex;
+        margin-top: 2em;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        margin-bottom: 1em;
+        border-bottom: 1px solid hsl(0, 0%, 85%);
+    }
+    .nav-links {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-links a {
+        color: black;
+        text-decoration: none;
+        padding-bottom: 5px;
+    }
+    .nav-links a:hover {
+        border-bottom: 1px solid black;
+    }
+
+    /* side-bar styling */
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        padding-left: 3vw;
+        width: 20vw;
+        background-color: hsl(0, 0%, 95%);
+    }
+
+    /* side-bar profile styling */
+    .profile {
+        display: flex;
+        align-items: center;
+        margin-top: 5vh;
+    }
+    .profile i {
+        font-size: 3.5em;
+    }
+    .profile p {
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-left: 1vw;
+    }
+    .tasks {
+        margin-top: 5vh;
+    }
+    .tasks a {
+        color: black;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .status {
+        margin-top: 1em;
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+    .status p {
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .status div {
+        height: 35vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        padding-left: 2vw;
+        margin-top: 2vh;
+    }
+    .status-item {
+        display: flex;
+        align-items: center;
+    }
+    .status a{
+        text-decoration: none;
+        color: black;
+    }
+    .status a span {
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .status a i {
+        font-size: 1.5em;
+        margin-right: 0.75em;
+    }
+
+    /* desktop-main-body styling */
+    .desktop-main-body {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        padding-left: 3vw;
+        padding-bottom: 3vh;
+    }
+
+    /* main-body-header styling */
+    .main-body-header {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+
+    /* greeting-msg styling */
+    .greeting-msg {
+        align-self: flex-start;
+        font-size: 1em;
+        min-width: 50%;
+    }
+
+    /* day-info styling */
+    .day-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    .day-info .today {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+    .day-info .today span {
+        display: flex;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .day-info .weather {
+        margin-right: 0;
+        margin-left: 10px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    .day-info .weather i {
+        font-size: 1.5rem;
+    }
+    .day-info .date {
+        font-size: 1.2em;
+        background: none;
+        width: auto;
+    }
+    
+    .task-card:last-child {
+        margin-bottom: 0;
+    }
+
+    button.add-new-task {
+        margin-top: auto;
+        padding: 0.5em;
+        font-size: 1.2em;
+        border: 0;
+        border-radius: 5px;
+        background-color: hsl(0, 0%, 75%);
+    }
+    button.add-new-task i {
+        margin-right: 0.5em;
+    }
+
+    /* footer styling */
+    footer {
+        display: none;
+    }
 }

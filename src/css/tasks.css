@@ -21,3 +21,24 @@ body {
     justify-content: space-around;
     display: none;
 }
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.desktop-nav {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.day-info {}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
