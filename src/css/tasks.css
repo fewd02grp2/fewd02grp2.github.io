@@ -4,41 +4,72 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.desktop-nav .logo {
-    width: 100px;
-}
-
-.desktop-nav .nav-link {
+.navbar-navbar {
     display: flex;
-    justify-content: space-around;
-    align-content: space-around;
-}
-
-.mobile-nav {
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     display: none;
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
+.desktop-nav {
+    display: flex;
+    justify-content: space-between;
 }
 
-.desktop-nav {
+.side-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 24px 32px;
+}
+
+.status-position {
     position: relative;
     display: flex;
     justify-content: space-around;
+    align-content: space-around;
+    flex-direction: column;
 }
 
-.day-info {}
+.add-task-sm {
+    position: relative;
+    margin: 24px 32px;
+    display: flex;
+    justify-content: flex-end;
+}
 
 .card-header {
     display: flex;
     justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 65px;
+}
+
+footer i {
+    font-size: 2em;
+}
+
+footer #add-task-lg {
+    color: rgb(67, 216, 67);
+    font-size: 3.5em;
+}
+
+@media screen and (max-width:768px) {
+    nav.navbar-navbar {
+        display: none;
+    }
+    .side-bar {
+        display: none;
+    }
 }
