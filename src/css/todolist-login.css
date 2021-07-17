@@ -1,0 +1,50 @@
+html {
+    background-color: rgb(252, 238, 221);
+}
+
+.login-container {
+    text-align: center;
+}
+
+.login {
+    background-color: #FFD8CC;
+    opacity: 0.7;
+    height: 28rem;
+}
+
+.login-info {
+    color: #515070;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+#email {
+    height: 1.2rem;
+    width: 10rem;
+}
+
+#pwd {
+    height: 1.2rem;
+    width: 10rem;
+}
+
+.slogan {
+    font-family: 'Dancing Script', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    color: #515070;
+}
+
+#button {
+    width: 10rem;
+    height: 5rem;
+    margin-top: 50px;
+    /* border: 100 2 20 2; */
+    /* padding: 10 30 10 30; */
+}
+
+footer {
+    color: #515070;
+}
