@@ -52,6 +52,8 @@ section.day-info {
     background-color: hsl(0, 0%, 75%);
     border-radius: 10px;
     margin-right: 5px;
+    height: 35px;
+    width: 35px;
 }
 .day-info .weather i {
     color: black;
@@ -62,10 +64,16 @@ section.day-info {
     background-color: hsl(0, 0%, 75%);
     width: 135px;
     font-size: 1.2em;
-    padding: 5px 15px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+/* categories styling */
+.categories {
+    display: none;
 }
 
 /* task-card-container styling */
@@ -152,6 +160,13 @@ footer #add-task-lg {
 
 
 @media screen and (min-width: 768px) {
+    /* container styling */
+    .container {
+        padding: 0 5%;
+        display: flex;
+        height: 100vh;
+    }
+
     /* mobile-nav styling */
     .mobile-nav {
         display: none;
@@ -163,7 +178,10 @@ footer #add-task-lg {
         margin-top: 2em;
         justify-content: space-between;
         align-items: center;
-        height: 65px;
+        height: 10vh;
+        /* background-color: hsl(0, 0%, 75%); */
+        margin-bottom: 1em;
+        border-bottom: 1px solid hsl(0, 0%, 85%);
     }
     .nav-links {
         width: 20%;
@@ -177,5 +195,94 @@ footer #add-task-lg {
     }
     .nav-links a:hover {
         border-bottom: 1px solid black;
+    }
+
+    /* side-bar styling */
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        width: 20vw;
+        border-right: 1px solid hsl(0, 0%, 85%);
+    }
+
+    /* desktop-main-body styling */
+    .desktop-main-body {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        padding-left: 5vw;
+        /* margin-top: 2em; */
+    }
+
+    /* main-body-header styling */
+    .main-body-header {
+        margin-top: 1.5em;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* greeting-msg styling */
+    .greeting-msg {
+        align-self: flex-start;
+        font-size: 1.25em;
+    }
+
+    /* day-info styling */
+    .day-info {
+        display: flex;
+    }
+    .day-info .weather {
+        order: 1;
+        margin-left: 10px;
+        margin-right: 0;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .day-info .weather i {
+        font-size: 1.5rem;
+    }
+    .day-info .date {
+        /* width: 15%; */
+        font-size: 1.2em;
+        height: 45px;
+    }
+
+    /* categories styling */
+    .categories {
+        margin-top: 1em;
+        display: block;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .categories-item {
+        display: flex;
+        align-items: center;
+    }
+    .categories a{
+        text-decoration: none;
+        color: black;
+    }
+    .categories a span {
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .categories a i {
+        font-size: 1.5em;
+        margin-right: 0.75em;
+    }
+
+    .task-card:last-child {
+        margin-bottom: 0;
+    }
+
+    /* footer styling */
+    footer {
+        display: none;
     }
 }
