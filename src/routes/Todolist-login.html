@@ -22,14 +22,17 @@
             <!-- Still don't have logo -->
             <form class="email" action="Todolist-login.html" method="POST">
                 <div class="login-info">
-                    <label for="email">email address: </label>
+                    <label for="email" id="login-email">email address: </label>
                     <input type="email" name="email" id="email"> <br><br>
                 </div>
                 <div class="login-info">
-                    <label for="pwd">password: </label>
+                    <label for="pwd" id="login-pwd">password: </label>
                     <input type="password" id="pwd" name="pwd">
                 </div>
-                <input type="submit">
+                <!-- add div called button -->
+                <div class="login-button">
+                    <button id="button" type="button">Login</button>
+                </div>
             </form>
             <footer class="copyright">
                 <p> © Logo ...... limited</p>
