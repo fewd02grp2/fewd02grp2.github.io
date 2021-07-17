@@ -43,7 +43,7 @@ html {
     top: 13rem;
 }
 
-#email {
+.email-blank {
     height: 2rem;
     width: 12rem;
     position: absolute;
@@ -53,7 +53,7 @@ html {
     border: none;
 }
 
-#pwd {
+.pwd-blank {
     height: 2rem;
     width: 12rem;
     position: absolute;
@@ -101,5 +101,10 @@ footer {
     .slogan {
         display: flex;
         flex-direction: row;
+    }
+    .email-blank {
+        display: flex;
+        width: 20rem;
+        height: 20rem;
     }
 }
