@@ -36,6 +36,9 @@ html, body {
 .profile {
     display: none;
 }
+.side-bar {
+    display: none;
+}
 
 /* greeting-msg styling */
 .greeting-msg h1 {
@@ -174,7 +177,8 @@ footer #add-task-lg {
 
     /* container styling */
     .container {
-        padding: 0 3vw;
+        padding-right: 3vw;
+        padding-left: 0;
         display: flex;
         height: 100vh;
     }
@@ -214,8 +218,9 @@ footer #add-task-lg {
         display: flex;
         flex-direction: column;
         /* justify-content: center; */
+        padding-left: 3vw;
         width: 20vw;
-        border-right: 1px solid hsl(0, 0%, 85%);
+        background-color: hsl(0, 0%, 95%);
     }
 
     /* side-bar profile styling */
@@ -231,6 +236,49 @@ footer #add-task-lg {
         font-size: 1.5em;
         font-weight: 700;
         margin-left: 1vw;
+    }
+    .tasks {
+        margin-top: 5vh;
+    }
+    .tasks a {
+        color: black;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .status {
+        margin-top: 1em;
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+    .status p {
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .status div {
+        height: 35vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        padding-left: 2vw;
+        margin-top: 2vh;
+    }
+    .status-item {
+        display: flex;
+        align-items: center;
+    }
+    .status a{
+        text-decoration: none;
+        color: black;
+    }
+    .status a span {
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .status a i {
+        font-size: 1.5em;
+        margin-right: 0.75em;
     }
 
     /* desktop-main-body styling */
@@ -295,33 +343,7 @@ footer #add-task-lg {
         background: none;
         width: auto;
     }
-
-    /* categories styling */
-    .categories {
-        margin-top: 1em;
-        display: block;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .categories-item {
-        display: flex;
-        align-items: center;
-    }
-    .categories a{
-        text-decoration: none;
-        color: black;
-    }
-    .categories a span {
-        font-weight: 700;
-        font-size: 1.25em;
-    }
-    .categories a i {
-        font-size: 1.5em;
-        margin-right: 0.75em;
-    }
-
+    
     .task-card:last-child {
         margin-bottom: 0;
     }
