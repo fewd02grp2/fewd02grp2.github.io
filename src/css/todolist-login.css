@@ -10,6 +10,7 @@ html {
     color: #515070;
     font-family: Sacramento;
     font-size: 45px;
+    padding-bottom: 20px;
 }
 
 .login {
@@ -32,23 +33,23 @@ html {
 }
 
 #login-email {
-    position: absolute;
-    left: 12px;
-    top: 7rem;
+    position: relative;
+    right: 4rem;
+    bottom: 6rem;
 }
 
 #login-pwd {
-    position: absolute;
-    left: 12px;
-    top: 13rem;
+    position: relative;
+    right: 4rem;
+    bottom: 5rem;
 }
 
 .email-blank {
     height: 2rem;
     width: 12rem;
-    position: absolute;
-    top: 9rem;
-    left: 6rem;
+    position: relative;
+    bottom: 5rem;
+    left: 3rem;
     border-radius: 5px;
     border: none;
 }
@@ -56,9 +57,9 @@ html {
 .pwd-blank {
     height: 2rem;
     width: 12rem;
-    position: absolute;
-    top: 15rem;
-    left: 6rem;
+    position: relative;
+    bottom: 4rem;
+    left: 3rem;
     border-radius: 5px;
     border: none;
 }
@@ -78,7 +79,7 @@ html {
     width: 18rem;
     height: 4.5rem;
     margin-top: 30px;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     font-family: Merriweather;
     font-style: normal;
     font-weight: normal;
@@ -106,6 +107,16 @@ footer {
         width: 35rem;
         height: 3rem;
     }
+    #login-email {
+        right: 14rem;
+    }
+    #login-pwd {
+        right: 14rem;
+    }
+    #button {
+        margin-bottom: 35px;
+        margin-top: 15px;
+    }
 }
 
 @media only screen and (min-width:1024px) {
@@ -116,5 +127,11 @@ footer {
     .pwd-blank {
         width: 45rem;
         height: 3rem;
+    }
+    #login-email {
+        right: 18rem;
+    }
+    #login-pwd {
+        right: 18rem;
     }
 }
