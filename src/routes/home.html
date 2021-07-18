@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="..//css/home.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="logo">
+        <i class="fas fa-tasks"></i>
+        <span>Logo</span>
+    </div>
+    <div class="container">
+        <div class="side-bar">
+            <div class="profile">
+                <i class="far fa-user-circle"></i>
+                <p>Username</p>
+            </div>
+            <div class="tasks">
+                <a href="./details.html">Tasks</a>
+            </div>
+            <div class="status">
+                <p>Status</p>
+                <div>
+                    <a href="" class="status-item"><i class="fas fa-tasks"></i><span>All</span></a>
+                    <a href="" class="status-item"><i class="fas fa-ellipsis-h"></i><span>Todo</span></a>
+                    <a href="" class="status-item"><i class="fas fa-spinner"></i><span>In Progress</span></a>
+                    <a href="" class="status-item"><i class="far fa-eye"></i><span>Review</span></a>
+                    <a href="" class="status-item"><i class="fas fa-check-circle"></i><span>Done</span></a>
+                </div>
+            </div>
+        </div>
+        <section class="desktop-main-body">
+            <div class="main-body-header">
+                <div class="greeting-msg">
+                    <h1>Good morning,<br>User.</h1>
+                </div>
+                <div class="day-info">
+                    <div class="today">
+                        <span>Today</span>
+                        <div class="weather">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <div class="date">15 Jul, 2021</div>
+                </div>
+            </div>
+            <section class="task-card-container">
+                <div class="task-card">
+                    <div class="task-card-status">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="task-card-body">
+                        <div>
+                            <span class="title">Title</span>
+                            <span class="priority priority-high">High</span>
+                        </div>
+                        <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex saepe fuga dignissimos perspiciatis nam minus.</div>
+                        <div class="due">Due: 19 Jul, 2021</div>
+                        <div class="assign">Group 2</div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-card-status">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="task-card-body">
+                        <div>
+                            <span class="title">Title</span>
+                            <span class="priority priority-high">High</span>
+                        </div>
+                        <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex saepe fuga dignissimos perspiciatis nam minus.</div>
+                        <div class="due">Due: 19 Jul, 2021</div>
+                        <div class="assign">Group 2</div>
+                    </div>
+                </div>
+                <div class="task-card">
+                    <div class="task-card-status">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="task-card-body">
+                        <div>
+                            <span class="title">Title</span>
+                            <span class="priority priority-low">Low</span>
+                        </div>
+                        <div class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex saepe fuga dignissimos perspiciatis nam minus.</div>
+                        <div class="due">Due: 19 Jul, 2021</div>
+                        <div class="assign">Group 2</div>
+                    </div>
+                </div>
+            </section>
+            <a href="../routes/new-tasks.html" class="add-new-task">
+                
+                    <i class="fas fa-plus"></i><span>ADD NEW TASK</span>
+                
+            </a>
+        </section>
+    </div>
+    <footer>
+        <a href="./home.html"><i class="fas fa-home" id="home-button"></i></a>
+        <a href="./new-tasks.html"><i class="fas fa-plus-circle" id="add-task-lg"></i></a>
+        <a href="./details.html"><i class="fas fa-bars" id="details-button"></i></a>
+    </footer>
+</body>
+
+</html>
