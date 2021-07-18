@@ -97,14 +97,24 @@ footer {
     font-family: Merriweather;
 }
 
-@media only screen and (min-width 768px) {
-    .slogan {
-        display: flex;
-        flex-direction: row;
-    }
+@media only screen and (min-width:768px) {
     .email-blank {
-        display: flex;
-        width: 20rem;
-        height: 20rem;
+        width: 35rem;
+        height: 3rem;
+    }
+    .pwd-blank {
+        width: 35rem;
+        height: 3rem;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .email-blank {
+        width: 45rem;
+        height: 3rem;
+    }
+    .pwd-blank {
+        width: 45rem;
+        height: 3rem;
     }
 }
