@@ -1,5 +1,5 @@
 # Todo-List / Group2
-___
+
 #### HTML/CSS source code
 | Page | Member |
 | --- | --- |
