@@ -19,7 +19,7 @@
     
     <!-- Mobile Layout -->
     <section class="new-task-form">
-            <form action="">
+            <form action="" method="POST">
                 <header class="header">
                     <i class="fas fa-long-arrow-alt-left"></i>
                     <span>Add new task</span>
@@ -28,28 +28,28 @@
                 <h1 id="desktop-form-header">ADD TASK</h1>
                 <div class="form-row">
                     <label for="task-title"><i class="fas fa-tasks"></i></label>
-                    <div>
+                    <div class="input-label">
                         <label for="task-title">Task Title</label>
                         <input type="text" id="task-title" name="title" placeholder="Task Title" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="task-duedate"><i class="far fa-calendar-alt"></i></label>
-                    <div>
+                    <div class="input-label">
                         <label for="task-duedate">Due Date</label>
                         <input type="date" id="task-duedate" name="duedate" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="task-description" class="task-description"><i class="fas fa-comment"></i></label>
-                    <div>
+                    <div class="input-label">
                         <label for="task-description">Description</label>
                         <textarea name="description" id="task-description" cols="30" rows="5" placeholder="Task Description"></textarea>
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="task-assignment"><i class="fas fa-user-check"></i></label>
-                    <div>
+                    <div class="input-label">
                         <label for="task-assignment">Assigned To</label>
                         <input type="text" id="task-assignment" name="assignment" placeholder="Name">
                     </div>
@@ -84,13 +84,5 @@
                 </footer>
             </form>
     </section>
-
-    
-    <!-- <section class="desktop-main-body">
-        <form action="" id="desktop-form">
-            <span>ADD TASK</span>
-            
-        </form>
-    </section> -->
 </body>
 </html>

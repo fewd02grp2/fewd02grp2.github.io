@@ -173,20 +173,7 @@ section.desktop-main-body {
         margin-left: 1vw;
     }
 
-    /* desktop-main-body styling
-    section.desktop-main-body {
-        display: flex;
-        width: 75vw;
-        padding: 3em;
-    }
-    #desktop-form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 2rem;
-    } */
-
+    /* desktop-task-form styling */
     section.new-task-form {
         margin: 3rem 3rem 0;
         width: 75vw;
@@ -210,11 +197,12 @@ section.desktop-main-body {
     .new-task-form .form-row {
         width: 80%;
     }
-    .form-row div label {
-        display: none;
+    .new-task-form .form-row .input-label {
+        display: flex;
+        flex-direction: column;
     }
 
-
+    /* desktop-form footer styling */
     .new-task-form footer {
         margin-top: 2rem;
         display: flex;
