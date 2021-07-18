@@ -12,6 +12,8 @@ body {
 
 .top-of-side-bar {
     width: 30%;
+    border: 0;
+    margin: 0;
 }
 
 .side-bar {
@@ -22,10 +24,13 @@ body {
     width: 25vw;
     height: 100%;
     background-color: hsl(0, 0%, 95%);
+    margin: 0;
+    border: 0;
 }
 
 .container-header: {
     height: 100px;
+    margin: 40px 32px
 }
 
 
@@ -115,6 +120,16 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
+    margin: 20px 28px;
+}
+
+.outer-layer-of-card {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    margin: 35px 32px;
+    width: 80%;
 }
 
 .main-body {
@@ -123,6 +138,7 @@ body {
     width: 75vw;
     padding-left: 3vw;
     padding-bottom: 3vh;
+    margin-right: 42px;
 }
 
 .add-task-sm {
