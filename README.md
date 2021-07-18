@@ -1,6 +1,6 @@
 # Todo-List / Group2
 
-[Click here](fewd02grp2.github.io) to view the page.
+[Click here](https://fewd02grp2.github.io/) to view the page.
 
 #### HTML/CSS source code
 | Page | Member |
