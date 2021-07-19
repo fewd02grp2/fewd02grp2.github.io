@@ -11,7 +11,7 @@
 | details.html | Olivia |
 
 #### Wireframe design
-[Click here](https://www.figma.com/file/aGDHtkMSIbWx4IQzdVxz0h/Todo-Lists?node-id=7%3A9) to view the wireframe.
+[Click here](https://www.figma.com/file/aGDHtkMSIbWx4IQzdVxz0h/Todo-Lists?node-id=0%3A1) to view the wireframe.
 | Page | Member |
 | ----- | ----- |
 | _All_ | Cherie |
