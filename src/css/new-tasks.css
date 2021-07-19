@@ -175,6 +175,21 @@ section.desktop-main-body {
         font-weight: 700;
         margin-left: 1vw;
     }
+    #back-btn {
+        margin-top: auto;
+        margin-bottom: 3vh;
+        margin-right: 3vw;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        background-color: hsl(0, 0%, 75%);
+        padding: 0.5em 0;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+    #back-btn i {
+        margin-right: 0.5rem;
+    }
 
     /* desktop-task-form styling */
     section.new-task-form {
