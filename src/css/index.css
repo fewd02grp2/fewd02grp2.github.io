@@ -1,383 +1,159 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: 'Arial', 'Helvetica', sans-serif;
+html {
+    background-color: rgb(252, 238, 221);
 }
 
-/* logo styling */
+.login-container {
+    text-align: center;
+}
+
 .logo {
-    display: flex;
-    align-items: center;
-    padding: 1em 0 1em 2em;
-    background-color:hsl(0, 0%, 85%);
-    margin-bottom: 2vh;
-}
-.logo i {
-    font-size: 2em;
-    margin-right: 0.25em;
-}
-.logo span {
-    font-size: 1.5em;
+    color: #515070;
+    font-family: Sacramento;
+    font-size: 45px;
+    padding-bottom: 20px;
 }
 
-/* container styling */
-.container {
-    padding: 0 7.5%;
-    margin-top: 0;
+.login {
+    background-color: #FFD8CC;
+    opacity: 0.7;
+    height: 35rem;
+    position: relative;
+    margin-bottom: 4rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }
 
-/* desktop-nav styling */
-.desktop-nav {
-    display: none;
+.login-info {
+    color: #515070;
+    font-size: 1.5rem;
+    white-space: pre-line;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 20px;
 }
 
-.profile {
-    display: none;
-}
-.side-bar {
-    display: none;
-}
-
-/* greeting-msg styling */
-.greeting-msg h1 {
-    font-size: 2.25em;
-    margin-top: 0;
-    margin-bottom: 0;
+#login-email {
+    position: relative;
+    right: 4rem;
+    bottom: 6rem;
 }
 
-/* day-info styling */
-.day-info {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 0.5em;
-}
-.day-info span {
-    display: none;
-}
-.day-info .weather {
-    background-color: hsl(0, 0%, 75%);
-    border-radius: 10px;
-    margin-right: 5px;
-    height: 35px;
-    width: 35px;
-}
-.day-info .weather i {
-    color: black;
-    font-size: 1.5em;
-    padding: 5px;
-}
-.day-info .date{
-    background-color: hsl(0, 0%, 75%);
-    width: 135px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 35px;
+#login-pwd {
+    position: relative;
+    right: 4rem;
+    bottom: 5rem;
 }
 
-/* categories styling */
-.categories {
-    display: none;
-}
-
-/* task-card-container styling */
-.task-card-container {
-    display: flex;
-    flex-direction: column;
-}
-
-/* task-card styling */
-.task-card {
-    background-color: hsl(0, 0%, 75%);
-    border-radius: 10px;
-    display: flex;
-    padding: 15px;
-    margin-bottom: 1em;
-}
-.task-card:last-child {
-    margin-bottom: 65px;
-}
-.task-card-status {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-}
-.task-card-status i {
-    font-size: 2.5em;
-}
-.task-card-body {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    padding-left: 15px;
-}
-.task-card-body > div {
-    display: flex;
-    align-items: center;
-}
-.task-card-body .title {
-    font-weight: 700;
-    font-size: 1.2em;
-    margin-right: 0.5em;
-}
-.task-card-body .priority {
-    padding: 2px 10px;
-    color: white;
-    font-size: 0.8em;
+.email-blank {
+    height: 2rem;
+    width: 12rem;
+    position: relative;
+    bottom: 5rem;
+    left: 3rem;
     border-radius: 5px;
-}
-.task-card-body .priority-high {
-    background-color: red;
-}
-.task-card-body .priority-low {
-    background-color: green;
-}
-.task-card-body .description {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    color:hsl(0, 0%, 40%);
-    font-size: 0.8em;
-}
-.task-card-body .due {
-    font-size: 0.8em;
-}
-.task-card-body .assign {
-    font-size: 0.8em;
+    border: none;
 }
 
-/* footer styling */
-footer {
+.pwd-blank {
+    height: 2rem;
+    width: 12rem;
+    position: relative;
+    bottom: 4rem;
+    left: 3rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.slogan {
+    font-family: 'Dancing Script', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    color: #515070;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    height: 65px;
-}
-footer i {
-    font-size: 2em;
-}
-footer #add-task-lg {
-    color: rgb(67, 216, 67);
-    font-size: 3.5em;
+    flex-direction: column;
 }
 
+#button {
+    width: 18rem;
+    height: 4.5rem;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    color: #515070;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFBB91;
+    /* border: 100 2 20 2; */
+    /* padding: 10 30 10 30; */
+}
 
-@media screen and (min-width: 768px) {
-    .logo {
-        display: none;
-    }
+footer {
+    color: #515070;
+    font-family: Merriweather;
+}
 
-    /* container styling */
-    .container {
-        padding-right: 3vw;
-        padding-left: 0;
-        display: flex;
-        height: 100vh;
+@media only screen and (max-width:375px) {
+    #login-email {
+        right: 1rem;
     }
-
-    /* mobile-nav styling */
-    .mobile-nav {
-        display: none;
+    #login-pwd {
+        right: 2rem;
     }
-
-    /* desktop-nav styling */
-    .desktop-nav {
-        display: flex;
-        margin-top: 2em;
-        justify-content: space-between;
-        align-items: center;
-        height: 10vh;
-        margin-bottom: 1em;
-        border-bottom: 1px solid hsl(0, 0%, 85%);
+    .email-blank {
+        width: 8rem;
+        left: 2rem;
     }
-    .nav-links {
-        width: 20%;
-        display: flex;
-        justify-content: space-between;
+    .pwd-blank {
+        width: 8rem;
+        left: 2rem;
     }
-    .nav-links a {
-        color: black;
-        text-decoration: none;
-        padding-bottom: 5px;
-    }
-    .nav-links a:hover {
-        border-bottom: 1px solid black;
-    }
-
-    /* side-bar styling */
-    .side-bar {
-        display: flex;
-        flex-direction: column;
-        /* justify-content: center; */
-        padding-left: 3vw;
-        width: 25vw;
-        background-color: hsl(0, 0%, 95%);
-    }
-
-    /* side-bar profile styling */
-    .profile {
-        display: flex;
-        align-items: center;
-        margin-top: 5vh;
-    }
-    .profile i {
-        font-size: 3.5em;
-    }
-    .profile p {
-        font-size: 1.5em;
-        font-weight: 700;
-        margin-left: 1vw;
-    }
-    .tasks {
-        margin-top: 5vh;
-    }
-    .tasks a {
-        color: black;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.25em;
-    }
-    .status {
-        margin-top: 1em;
-        display: block;
-        display: flex;
-        flex-direction: column;
-    }
-    .status p {
-        font-weight: 700;
-        font-size: 1.25em;
-    }
-    .status div {
-        height: 35vh;
-        display: flex;
-        flex-flow: column;
-        justify-content: space-between;
-        padding-left: 2vw;
-        margin-top: 2vh;
-    }
-    .status-item {
-        display: flex;
-        align-items: center;
-    }
-    .status a{
-        text-decoration: none;
-        color: black;
-    }
-    .status a span {
-        font-weight: 700;
-        font-size: 1.2em;
-    }
-    .status a i {
-        font-size: 1.5em;
-        margin-right: 0.75em;
-    }
-
-    /* desktop-main-body styling */
-    .desktop-main-body {
-        display: flex;
-        flex-direction: column;
-        width: 75vw;
-        padding-left: 3vw;
-        padding-bottom: 3vh;
-    }
-
-    /* main-body-header styling */
-    .main-body-header {
-        margin-top: 5vh;
-        margin-bottom: 5vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: auto;
-    }
-
-    /* greeting-msg styling */
-    .greeting-msg {
-        align-self: flex-start;
-        font-size: 1em;
-        min-width: 50%;
-    }
-
-    /* day-info styling */
-    .day-info {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        align-items: flex-start;
-    }
-    .day-info .today {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 100%;
-    }
-    .day-info .today span {
-        display: flex;
-        font-weight: 700;
-        font-size: 1.2em;
-    }
-    .day-info .weather {
-        margin-right: 0;
-        margin-left: 10px;
-        width: 35px;
-        height: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-    }
-    .day-info .weather i {
-        font-size: 1.5rem;
-    }
-    .day-info .date {
-        font-size: 1.2em;
-        background: none;
-        width: auto;
-    }
-    
-    .task-card:last-child {
-        margin-bottom: 0;
-    }
-
-    button.add-new-task {
-        margin-top: auto;
-        padding: 0.5em;
-        font-size: 1.2em;
-        border: 0;
-        border-radius: 5px;
-        background-color: hsl(0, 0%, 75%);
-    }
-    button.add-new-task i {
-        margin-right: 0.5em;
-    }
-
-    /* footer styling */
-    footer {
-        display: none;
+    #button {
+        width: 10rem;
     }
 }
 
-@media screen and (width: 768px) {
-    .profile {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+@media only screen and (min-width:768px) {
+    .email-blank {
+        width: 30rem;
+        height: 3rem;
     }
-    .profile p {
-        margin: 0.5em 0;
+    .pwd-blank {
+        width: 30rem;
+        height: 3rem;
     }
-    .status-item {
-        font-size: 0.8em;
+    #login-email {
+        right: 14rem;
+    }
+    #login-pwd {
+        right: 14rem;
+    }
+    #button {
+        margin-bottom: 35px;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .email-blank {
+        width: 45rem;
+        height: 3rem;
+    }
+    .pwd-blank {
+        width: 45rem;
+        height: 3rem;
+    }
+    #login-email {
+        right: 18rem;
+    }
+    #login-pwd {
+        right: 18rem;
     }
 }
