@@ -16,7 +16,12 @@ body {
     margin: 0;
 }
 
-.side-bar {
+.side-bar-style {
+    padding: 0;
+    margin: 0;
+}
+
+.side-bar col-md-3 {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
