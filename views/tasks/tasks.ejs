@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="/stylesheets/tasks.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="logo">
+        <div>
+            <i class="far fa-user-circle"></i>
+            <span>Username</span>
+        </div>
+        <div>
+            <a href="/login" id="logout-btn"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="side-bar">
+            <div class="profile">
+                <i class="far fa-user-circle"></i>
+                <p>Username</p>
+            </div>
+            <div class="tasks">
+                <a href="/tasks">All Tasks</a>
+            </div>
+            <div class="status">
+                <p>Status</p>
+                <div>
+                    <a href="/tasks?status=todo" class="status-item"><i class="fas fa-ellipsis-h"></i><span>Todo</span></a>
+                    <a href="/tasks?status=inProgress" class="status-item"><i class="fas fa-spinner"></i><span>In Progress</span></a>
+                    <a href="/tasks?status=review" class="status-item"><i class="far fa-eye"></i><span>Review</span></a>
+                    <a href="/tasks?status=done" class="status-item"><i class="fas fa-check-circle"></i><span>Done</span></a>
+                </div>
+            </div>
+            <a href="/login" id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </div>
+        <section class="desktop-main-body">
+            <div class="main-body-header">
+                <div class="greeting-msg">
+                    <h1>Good morning,<br>User.</h1>
+                </div>
+                <div class="day-info">
+                    <div class="today">
+                        <span>Today</span>
+                        <div class="weather">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <div class="date">14 Aug, 2021</div>
+                </div>
+            </div>
+            <section class="task-card-container">
+                <% for (const task of tasks) { %>
+                    <div class="task-card">
+                        <div class="task-card-status">
+                            <% if (task.status === 'todo') { %>
+                                <a href="/tasks/<%= task._id %>"><i class="fas fa-ellipsis-h"></i></a>
+                            <% } else if (task.status === 'inProgress') { %>
+                                <a href="/tasks/<%= task._id %>"><i class="fas fa-spinner"></i></a>
+                            <% } else if (task.status === 'review') { %>
+                                <a href="/tasks/<%= task._id %>"><i class="fas fa-eye"></i></a>
+                            <% } else if (task.status === 'done') { %>
+                                <a href="/tasks/<%= task._id %>"><i class="fas fa-check-circle"></i></a>
+                            <% } %> 
+                        </div>
+                        <div class="task-card-body">
+                            <div>
+                                <a href="/tasks/<%= task._id %>">
+                                <span class="title"><%= task.title %></span>
+                                </a>
+                                <span class="priority priority-<%= task.priority %>"><%= task.priority %></span>
+                            </div>
+                            <div class="description"><%= task.description %></div>
+                            <div class="due">Due: <%= task.due %></div>
+                            <div class="assign">Assigned To: <%= task.assignment %></div>
+                        </div>
+                    </div>
+                <% } %>
+            </section>
+            <a href="/tasks/new" class="add-new-task">
+                <i class="fas fa-plus"></i><span>ADD NEW TASK</span>
+            </a>
+        </section>
+    </div>
+    <footer>
+        <a href="/tasks"><i class="fas fa-home" id="home-button"></i></a>
+        <a href="/tasks/new"><i class="fas fa-plus-circle" id="add-task-lg"></i></a>
+        <a href=""><i class="fas fa-bars" id="details-button"></i></a>
+    </footer>
+</body>
+
+</html>

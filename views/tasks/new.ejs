@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/new-tasks.css">
+    <link rel="stylesheet" href="/stylesheets/new.css">
     <title>Add New Task</title>
 </head>
 <body>
@@ -15,14 +15,14 @@
             <i class="far fa-user-circle"></i>
             <p>Username</p>
         </div>
-        <a href="./home.html" id="back-btn"><i class="fas fa-long-arrow-alt-left"></i>Back</a>
+        <a href="/tasks" id="back-btn"><i class="fas fa-long-arrow-alt-left"></i>Back</a>
     </div>
     
     <!-- Mobile Layout -->
     <section class="new-task-form">
-            <form action="./home.html" method="POST">
+            <form action="/tasks" method="POST">
                 <header class="header">
-                    <a href="./home.html"><i class="fas fa-long-arrow-alt-left"></i></a>
+                    <a href="/tasks"><i class="fas fa-long-arrow-alt-left"></i></a>
                     <span>Add new task</span>
                     <button type="submit">ADD</button>
                 </header>
@@ -31,28 +31,28 @@
                     <label for="task-title"><i class="fas fa-tasks"></i></label>
                     <div class="input-label">
                         <label for="task-title">Task Title</label>
-                        <input type="text" id="task-title" name="title" placeholder="Task Title" required>
+                        <input type="text" id="task-title" name="title" placeholder="Title" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="task-duedate"><i class="far fa-calendar-alt"></i></label>
                     <div class="input-label">
                         <label for="task-duedate">Due Date</label>
-                        <input type="date" id="task-duedate" name="duedate" required>
+                        <input type="date" id="task-duedate" name="due" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="task-description" class="task-description"><i class="fas fa-comment"></i></label>
                     <div class="input-label">
                         <label for="task-description">Description</label>
-                        <textarea name="description" id="task-description" cols="30" rows="5" placeholder="Task Description"></textarea>
+                        <textarea name="description" id="task-description" cols="30" rows="5" placeholder="Description"></textarea>
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="task-assignment"><i class="fas fa-user-check"></i></label>
                     <div class="input-label">
                         <label for="task-assignment">Assigned To</label>
-                        <input type="text" id="task-assignment" name="assignment" placeholder="Name">
+                        <input type="text" id="task-assignment" name="assignment" placeholder="Assigned To">
                     </div>
                 </div>
                 <div class="form-row">
@@ -60,27 +60,23 @@
                     <div id="status-priority-pair">
                         <div class="status">
                             <label for="task-status" class="task-status">Status</label>
-                            <select name="task-status" id="task-status" required>
+                            <select name="status" id="task-status" required>
                                 <option value="todo">Todo</option>
-                                <option value="in-progress">In Progress</option>
+                                <option value="inProgress">In Progress</option>
                                 <option value="review">Review</option>
                                 <option value="done">Done</option>
                             </select>
                         </div>
                         <div class="priority">
                             <label for="task-priority" class="task-priority">Priority</label>
-                            <select name="task-priority" id="task-priority" required>
-                                <option value="high">High</option>
-                                <option value="low">Low</option>
+                            <select name="priority" id="task-priority" required>
+                                <option value="High">High</option>
+                                <option value="Low">Low</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <footer>
-                    <div>
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </div>
                     <button type="submit" id="desktop-add-button"><i class="fas fa-plus"></i><span>ADD</span></button>
                 </footer>
             </form>

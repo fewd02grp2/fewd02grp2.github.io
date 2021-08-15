@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="/stylesheets/details.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="logo">
+        <div>
+            <i class="far fa-user-circle"></i>
+            <span>Username</span>
+        </div>
+        <div>
+            <a href="/tasks" id="logout-btn"><i class="fas fa-long-arrow-alt-left"></i><span>Back</span></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="side-bar">
+            <div class="profile">
+                <i class="far fa-user-circle"></i>
+                <p>Username</p>
+            </div>
+            <a href="/tasks" id="logout-btn"><i class="fas fa-long-arrow-alt-left"></i>Back</a>
+        </div>
+        <section class="desktop-main-body">
+            <div class="main-body-header">
+                <div class="greeting-msg">
+                    <h1>Good morning,<br>User.</h1>
+                </div>
+                <div class="day-info">
+                    <div class="today">
+                        <span>Today</span>
+                        <div class="weather">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <div class="date">14 Aug, 2021</div>
+                </div>
+            </div>
+            <section class="task-card-container">
+                    <div class="task-card">
+                        <div class="task-card-status">
+                            <% if (foundTask.status === 'todo') { %>
+                                <i class="fas fa-ellipsis-h"></i>
+                            <% } else if (foundTask.status === 'inProgress') { %>
+                                <i class="fas fa-spinner"></i>
+                            <% } else if (foundTask.status === 'review') { %>
+                                <i class="fas fa-eye"></i>
+                            <% } else if (foundTask.status === 'done') { %>
+                                <i class="fas fa-check-circle"></i>
+                            <% } %> 
+                        </div>
+                        <div class="task-card-body">
+                            <div class="title-priority-row">
+                                <span class="title"><%= foundTask.title %></span>
+                                <span class="priority priority-<%= foundTask.priority %>"><%= foundTask.priority %></span>
+                            </div>
+                            <div class="description"><%= foundTask.description %></div>
+                            <div class="due">Due: <%= foundTask.due %></div>
+                            <div class="assign">Assigned To: <%= foundTask.assignment %></div>
+                        </div>
+                    </div>
+            </section>
+            <div class="edit-delete-row">
+                <a href="/tasks/<%= foundTask._id %>/edit"><i class="far fa-edit"></i>Edit</a>
+                <form action="/tasks/<%= foundTask._id %>?_method=DELETE" method="POST">
+                    <button><i class="far fa-trash-alt"></i>Delete</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <a href="/tasks"><i class="fas fa-home" id="home-button"></i></a>
+        <a href="/tasks/new"><i class="fas fa-plus-circle" id="add-task-lg"></i></a>
+        <a href=""><i class="fas fa-bars" id="details-button"></i></a>
+    </footer>
+</body>
+
+</html>

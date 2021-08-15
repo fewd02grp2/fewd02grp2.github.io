@@ -95,6 +95,11 @@ html {
     /* padding: 10 30 10 30; */
 }
 
+a#button {
+    text-decoration: none;
+    padding: 10px 30px;
+}
+
 footer {
     color: #515070;
     font-family: Merriweather;

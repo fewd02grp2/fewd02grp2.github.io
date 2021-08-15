@@ -132,6 +132,7 @@ header button {
     border-radius: 10px;
     padding: 8px 20px;
     background-color: hsl(0, 0%, 75%);
+    cursor: pointer;
 }
 #desktop-add-button {
     display: none;

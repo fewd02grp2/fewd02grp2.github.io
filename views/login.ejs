@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <!-- add google font link again Merriweather and Sacramento-->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Sacramento&display=swap" rel="stylesheet">
-    <link href="./src/css/index.css" rel="stylesheet">
+    <link href="/stylesheets/login.css" rel="stylesheet" type="text/css">
     <title>Login</title>
 </head>
 
@@ -23,7 +23,7 @@
             <div class="logo">
                 <h3>Logo</h3>
             </div>
-            <form class="email" action="./src/routes/home.html" method="GET">
+            <form action="/tasks" method="POST">
                 <div class="login-info">
                     <!-- add id "login-pwd/email" -->
                     <label for="email" id="login-email">email address: </label>
@@ -34,9 +34,7 @@
                     <input type="password" class="pwd-blank" name="pwd">
                 </div>
                 <!-- add div called button -->
-                <div class="login-button">
-                    <button id="button" type="submit">Login</button>
-                </div>
+                    <a href="/tasks" id="button">Login</a>                
             </form>
             <footer class="copyright">
                 <p> © Logo ...... limited</p>

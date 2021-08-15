@@ -1,0 +1,480 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    height: 90vh;
+}
+
+/* logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 1em 7.5%;
+    background-color:hsl(0, 0%, 85%);
+    margin-bottom: 2vh;
+    justify-content: space-between;
+}
+.logo div, .logo div a {
+    display: flex;
+    align-items: center;
+}
+.logo i {
+    font-size: 2em;
+    margin-right: 0.25em;
+}
+.logo span {
+    font-size: 1.25rem;
+}
+.logo a {
+    color: black;
+    text-decoration: none;
+    background-color: hsl(0, 0%, 75%);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* container styling */
+.container {
+    padding: 0 7.5%;
+    margin-top: 0;
+    height: 75vh;
+}
+
+/* desktop-nav styling */
+.desktop-nav {
+    display: none;
+}
+
+.profile {
+    display: none;
+}
+.side-bar {
+    display: none;
+}
+
+.desktop-main-body {
+    height: 100%;
+}
+
+/* greeting-msg styling */
+.greeting-msg h1 {
+    font-size: 2.25em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* day-info styling */
+.day-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 0.5em;
+}
+.day-info span {
+    display: none;
+}
+.day-info .weather {
+    background-color: hsl(0, 0%, 75%);
+    border-radius: 10px;
+    margin-right: 5px;
+    height: 35px;
+    width: 35px;
+}
+.day-info .weather i {
+    color: black;
+    font-size: 1.5em;
+    padding: 5px;
+}
+.day-info .date{
+    background-color: hsl(0, 0%, 75%);
+    width: 135px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+/* categories styling */
+.categories {
+    display: none;
+}
+
+/* task-card-container styling */
+.task-card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* task-card styling */
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+.task-card {
+    background-color: hsl(0, 0%, 75%);
+    border-radius: 10px;
+    display: flex;
+    padding: 15px;
+    margin-bottom: 1em;
+}
+/* .task-card:last-child {
+    margin-bottom: 65px;
+} */
+.task-card-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+.task-card-status i {
+    font-size: 2.5em;
+}
+.task-card-body {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-left: 15px;
+}
+/* .task-card-body > div {
+    display: flex;
+    align-items: center;
+} */
+.title-priority-row {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+.task-card-body .title {
+    font-weight: 700;
+    font-size: 1.2em;
+    /* margin-right: 1em; */
+    margin-bottom: .25em;
+}
+.task-card-body .priority {
+    padding: 2px 10px;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 5px;
+}
+.task-card-body .priority-High {
+    background-color: hsl(0, 0%, 50%);
+}
+.task-card-body .priority-Low {
+    background-color: hsl(0, 0%, 90%);
+    color:hsl(0, 0%, 40%);
+}
+.task-card-body .description {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color:hsl(0, 0%, 40%);
+    font-size: 1rem;
+}
+.task-card-body .due {
+    font-size: 1rem;
+}
+.task-card-body .assign {
+    font-size: 1rem;
+}
+
+.edit-delete-row {
+    margin-top: 125px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.edit-delete-row a,
+.edit-delete-row button {
+    background-color: hsl(0, 0%, 75%);
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+.edit-delete-row i {
+    margin-right: 10px;
+}
+
+/* footer styling */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 65px;
+}
+footer i {
+    font-size: 2em;
+    color: black;
+}
+footer #add-task-lg {
+    color: hsl(0, 0%, 75%);
+    font-size: 3.5em;
+}
+
+
+@media screen and (min-width: 768px) {
+    .logo {
+        display: none;
+    }
+
+    /* container styling */
+    .container {
+        padding-right: 3vw;
+        padding-left: 0;
+        display: flex;
+        height: 100vh;
+    }
+
+    /* mobile-nav styling */
+    .mobile-nav {
+        display: none;
+    }
+
+    /* desktop-nav styling */
+    .desktop-nav {
+        display: flex;
+        margin-top: 2em;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        margin-bottom: 1em;
+        border-bottom: 1px solid hsl(0, 0%, 85%);
+    }
+    .nav-links {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-links a {
+        color: black;
+        text-decoration: none;
+        padding-bottom: 5px;
+    }
+    .nav-links a:hover {
+        border-bottom: 1px solid black;
+    }
+
+    /* side-bar styling */
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        padding-left: 3vw;
+        width: 25vw;
+        background-color: hsl(0, 0%, 95%);
+    }
+
+    /* side-bar profile styling */
+    .profile {
+        display: flex;
+        align-items: center;
+        margin-top: 5vh;
+    }
+    .profile i {
+        font-size: 3.5em;
+    }
+    .profile p {
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-left: 1vw;
+    }
+    #logout-btn {
+        margin-top: auto;
+        margin-bottom: 3vh;
+        margin-right: 3vw;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        background-color: hsl(0, 0%, 75%);
+        padding: 0.5em 0;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+    #logout-btn i {
+        margin-right: 0.5rem;
+    }
+    .tasks {
+        margin-top: 5vh;
+    }
+    .tasks a {
+        color: black;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .status {
+        margin-top: 1em;
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+    .status p {
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .status div {
+        height: 35vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        padding-left: 2vw;
+        margin-top: 2vh;
+    }
+    .status-item {
+        display: flex;
+        align-items: center;
+    }
+    .status a{
+        text-decoration: none;
+        color: black;
+    }
+    .status a span {
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .status a i {
+        font-size: 1.5em;
+        margin-right: 0.75em;
+    }
+
+    /* desktop-main-body styling */
+    .desktop-main-body {
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        height: 100vh;
+        margin-left: 3vw;
+        margin-bottom: 3vh;
+    }
+
+    /* main-body-header styling */
+    .main-body-header {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+
+    /* greeting-msg styling */
+    .greeting-msg {
+        align-self: flex-start;
+        font-size: 1em;
+        min-width: 50%;
+    }
+
+    /* day-info styling */
+    .day-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    .day-info .today {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+    .day-info .today span {
+        display: flex;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .day-info .weather {
+        margin-right: 0;
+        margin-left: 10px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    .day-info .weather i {
+        font-size: 1.5rem;
+    }
+    .day-info .date {
+        font-size: 1.2em;
+        background: none;
+        width: auto;
+    }
+
+    .title-priority-row {
+        display: flex;
+        flex-direction: row;
+    }
+    .title-priority-row .title {
+        margin-right: 1em;
+    }
+
+    .task-card:last-child {
+        margin-bottom: 0;
+    }
+
+    a.add-new-task {
+        /* display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        height: 65px; */
+
+        /* position: fixed;
+        bottom: 3vh; */
+        margin-top: auto;
+        padding: 0.5em;
+        font-size: 1.2em;
+        border: 0;
+        border-radius: 5px;
+        background-color: hsl(0, 0%, 75%);
+        text-decoration: none;
+        color: black;
+        text-align: center;
+    }
+    a.add-new-task i {
+        margin-right: 0.5em;
+    }
+
+    .edit-delete-row {
+        margin-top: auto;
+        margin-bottom: 3vh;
+    }
+    .edit-delete-row a,
+    .edit-delete-row button {
+        padding: .5em 4em;
+        border-radius: 10px;
+        font-size: 1.2rem;
+    }
+
+    /* footer styling */
+    footer {
+        display: none;
+    }
+}
+
+@media screen and (width: 768px) {
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profile p {
+        margin: 0.5em 0;
+    }
+    .status-item {
+        font-size: 0.8em;
+    }
+}
