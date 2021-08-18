@@ -1,3 +1,10 @@
+/*
+#3EB9B0
+#CC3333
+#3461AC
+#8D63A6
+*/
+
 html, body {
     margin: 0;
     padding: 0;
@@ -116,11 +123,45 @@ a {
     border-radius: 10px;
     display: flex;
     padding: 15px;
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
 }
 .task-card:last-child {
     margin-bottom: 65px;
 }
+
+.task-card.todo {
+    border: 2px solid #3461AC;
+    border-top: 35px solid #3461AC;
+    background-color: white;
+}
+.task-card.todo i {
+    color: #3461AC;
+}
+.task-card.inProgress {
+    border: 2px solid #8D63A6;
+    border-top: 35px solid #8D63A6;
+    background-color: white;
+}
+.task-card.inProgress i {
+    color: #8D63A6;
+}
+.task-card.review {
+    border: 2px solid #CC3333;
+    border-top: 35px solid #CC3333;
+    background-color: white;
+}
+.task-card.review i {
+    color: #CC3333;
+}
+.task-card.done {
+    border: 2px solid #3EB9B0;
+    border-top: 35px solid #3EB9B0;
+    background-color: white;
+}
+.task-card.done i {
+    color: #3EB9B0;
+}
+
 .task-card-status {
     display: flex;
     justify-content: center;
@@ -200,7 +241,7 @@ footer #add-task-lg {
 
     /* container styling */
     .container {
-        padding-right: 3vw;
+        padding-right: 0;
         padding-left: 0;
         display: flex;
         height: 100vh;
@@ -324,7 +365,9 @@ footer #add-task-lg {
         flex-direction: column;
         width: 75vw;
         padding-left: 3vw;
+        padding-right: 3vw;
         padding-bottom: 3vh;
+        overflow: scroll;
     }
 
     /* main-body-header styling */
@@ -380,27 +423,39 @@ footer #add-task-lg {
         background: none;
         width: auto;
     }
-
+    .task-card-container {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .task-card {
+        width: 30vw;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+    }
     .task-card-body .priority {
         display: flex;
     }
-    
     .task-card:last-child {
-        margin-bottom: 0;
+        margin-bottom: 1.2em;
     }
     
     a.add-new-task {
-        margin-top: auto;
-        padding: 0.5em;
-        font-size: 1.2em;
-        border-radius: 5px;
-        background-color: hsl(0, 0%, 75%);
+        /* margin-top: auto; */
+        position: fixed;
+        bottom: 3vh;
+        right: 3vw;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        font-size: 1.75em;
+        border-radius: 50%;
+        background-color: hsl(0, 0%, 50%);
         text-decoration: none;
         color: black;
-        text-align: center;
-    }
-    a.add-new-task i {
-        margin-right: 0.5em;
+        /* text-align: center; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     /* footer styling */

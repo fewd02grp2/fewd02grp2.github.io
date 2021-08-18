@@ -57,7 +57,7 @@
             </div>
             <section class="task-card-container">
                 <% for (const task of tasks) { %>
-                    <div class="task-card">
+                    <div class="task-card <%= task.status %>">
                         <div class="task-card-status">
                             <% if (task.status === 'todo') { %>
                                 <a href="/tasks/<%= task._id %>"><i class="fas fa-ellipsis-h"></i></a>
@@ -83,9 +83,7 @@
                     </div>
                 <% } %>
             </section>
-            <a href="/tasks/new" class="add-new-task">
-                <i class="fas fa-plus"></i><span>ADD NEW TASK</span>
-            </a>
+            <a href="/tasks/new" class="add-new-task"><i class="fas fa-plus"></i></a>
         </section>
     </div>
     <footer>
