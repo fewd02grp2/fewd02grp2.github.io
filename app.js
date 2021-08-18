@@ -29,7 +29,7 @@ app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')));
 
 // CRUD Routes
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
     res.render('login')
 })
 

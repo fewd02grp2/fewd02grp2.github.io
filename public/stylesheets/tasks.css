@@ -73,7 +73,7 @@ html, body {
     align-items: center;
     width: 100%;
     height: 50px;
-    margin-bottom: 0.5em;
+    margin-bottom: .75em;
 }
 .day-info span {
     display: none;
@@ -166,7 +166,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 25%;
 }
 .task-card-status i {
     font-size: 2.5em;
@@ -174,7 +174,7 @@ a {
 .task-card-body {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 75%;
     padding-left: 15px;
 }
 .task-card-body > div {
@@ -194,11 +194,11 @@ a {
     display: none;
 }
 .task-card-body .priority-High {
-    background-color: hsl(0, 0%, 50%);
+    background-color: orangered;
 }
 .task-card-body .priority-Low {
-    background-color: hsl(0, 0%, 90%);
-    color:hsl(0, 0%, 40%);
+    background-color: green;
+    /* color:hsl(0, 0%, 40%); */
 }
 .task-card-body .description {
     margin-top: 0.5em;
@@ -283,7 +283,7 @@ footer #add-task-lg {
         /* justify-content: center; */
         padding-left: 3vw;
         width: 25vw;
-        background-color: hsl(0, 0%, 95%);
+        background-color: hsl(0, 100%, 95%);
     }
 
     /* side-bar profile styling */
@@ -307,7 +307,8 @@ footer #add-task-lg {
         text-align: center;
         text-decoration: none;
         color: black;
-        background-color: hsl(0, 0%, 75%);
+        background-color: #fff2f2;
+        box-shadow: 2px 2px 3px #808079;
         padding: 0.5em 0;
         border-radius: 5px;
         font-size: 1.2rem;
@@ -346,9 +347,20 @@ footer #add-task-lg {
         display: flex;
         align-items: center;
     }
+    .status-item-todo {
+        color: #3461AC;
+    }
+    .status-item-inProgress {
+        color: #8D63A6;
+    }
+    .status-item-review {
+        color: #CC3333;
+    }
+    .status-item-done {
+        color: #3EB9B0;
+    }
     .status a{
         text-decoration: none;
-        color: black;
     }
     .status a span {
         font-weight: 700;
@@ -432,6 +444,10 @@ footer #add-task-lg {
         padding-top: 3vh;
         padding-bottom: 3vh;
     }
+    .task-card-body {
+        height: 15vh;
+        justify-content: space-evenly;
+    }
     .task-card-body .priority {
         display: flex;
     }
@@ -449,9 +465,10 @@ footer #add-task-lg {
         padding: 10px;
         font-size: 1.75em;
         border-radius: 50%;
-        background-color: hsl(0, 0%, 50%);
+        /* background-color: hsl(0, 0%, 50%); */
+        background-color: orange;
         text-decoration: none;
-        color: black;
+        color: white;
         /* text-align: center; */
         display: flex;
         justify-content: center;
