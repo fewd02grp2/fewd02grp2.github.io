@@ -195,6 +195,7 @@ a {
     border-radius: 10px;
     border: none;
     font-size: 16px;
+    cursor: pointer;
 }
 .edit-delete-row i {
     margin-right: 10px;

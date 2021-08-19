@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const moment = require('moment');
 
 const Task = require('./models/task')
 
@@ -28,6 +29,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // CRUD Routes
 app.get('/', (req, res) => {
     res.render('login')
@@ -35,12 +37,14 @@ app.get('/', (req, res) => {
 
 app.get('/tasks', async (req, res) => {
     const { status } = req.query
+    const todayDate = moment().format("Do MMM YYYY")
+    const weekDay = moment().format("dddd")
     if (status) {
         const tasks = await Task.find({ status })
-        res.render('tasks/tasks', { tasks })
+        res.render('tasks/tasks', { tasks, todayDate, weekDay })
     } else {
         const tasks = await Task.find({})
-        res.render('tasks/tasks', { tasks })
+        res.render('tasks/tasks', { tasks, todayDate, weekDay })
     }
 })
 app.post('/tasks', async (req, res) => {
