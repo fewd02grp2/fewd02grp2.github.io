@@ -38,12 +38,14 @@
                     <a href="/tasks?status=done" class="status-item-done"><i class="fas fa-check-circle"></i><span>Done</span></a>
                 </div>
             </div>
-            <a href="/login" id="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            <a href="/login" id="logout-btn" class="button-os"><i class="fas fa-sign-out-alt"></i>Logout</a>
         </div>
         <section class="desktop-main-body">
             <div class="main-body-header">
                 <div class="greeting-msg">
-                    <h1>Good morning,<br>User.</h1>
+                    <div class='console-container'><span id='text'></span>
+                        <div class='console-underscore' id='console'></div>
+                    </div>
                 </div>
                 <div class="day-info">
                     <div class="today">
@@ -53,6 +55,25 @@
                         </div>
                     </div>
                     <div class="date">14 Aug, 2021</div>
+
+                    <!-- <div class="datetime">
+                        <div class="date">
+                            <span id="dayname">Day</span>,
+                            <span id="month">Month</span>
+                            <span id="daynum">00</span>,
+                            <span id="year">Year</span>
+
+                        </div>
+
+                        <div class="time">
+                            <span id="hour">00</span>:
+                            <span id="minutes">00</span>:
+                            <span id="seconds">00</span>
+                            <span id=""></span>
+
+
+                        </div>
+                    </div>-->
                 </div>
             </div>
             <section class="task-card-container">
@@ -61,27 +82,33 @@
                         <div class="task-card-status">
                             <% if (task.status === 'todo') { %>
                                 <a href="/tasks/<%= task._id %>"><i class="fas fa-ellipsis-h"></i></a>
-                            <% } else if (task.status === 'inProgress') { %>
-                                <a href="/tasks/<%= task._id %>"><i class="fas fa-spinner"></i></a>
-                            <% } else if (task.status === 'review') { %>
-                                <a href="/tasks/<%= task._id %>"><i class="fas fa-eye"></i></a>
-                            <% } else if (task.status === 'done') { %>
-                                <a href="/tasks/<%= task._id %>"><i class="fas fa-check-circle"></i></a>
-                            <% } %> 
+                                <% } else if (task.status === 'inProgress') { %>
+                                    <a href="/tasks/<%= task._id %>"><i class="fas fa-spinner"></i></a>
+                                    <% } else if (task.status === 'review') { %>
+                                        <a href="/tasks/<%= task._id %>"><i class="fas fa-eye"></i></a>
+                                        <% } else if (task.status === 'done') { %>
+                                            <a href="/tasks/<%= task._id %>"><i class="fas fa-check-circle"></i></a>
+                                            <% } %>
                         </div>
                         <div class="task-card-body">
                             <div>
                                 <a href="/tasks/<%= task._id %>">
-                                <span class="title"><%= task.title %></span>
+                                    <span class="title"><%= task.title %></span>
                                 </a>
                                 <span class="priority priority-<%= task.priority %>"><%= task.priority %></span>
                             </div>
-                            <div class="description"><%= task.description %></div>
-                            <div class="due">Due: <%= task.due %></div>
-                            <div class="assign">Assigned To: <%= task.assignment %></div>
+                            <div class="description">
+                                <%= task.description %>
+                            </div>
+                            <div class="due">Due:
+                                <%= task.due %>
+                            </div>
+                            <div class="assign">Assigned To:
+                                <%= task.assignment %>
+                            </div>
                         </div>
                     </div>
-                <% } %>
+                    <% } %>
             </section>
             <a href="/tasks/new" class="add-new-task"><i class="fas fa-plus"></i></a>
         </section>
@@ -90,7 +117,86 @@
         <a href="/tasks"><i class="fas fa-home" id="home-button"></i></a>
         <a href="/tasks/new"><i class="fas fa-plus-circle" id="add-task-lg"></i></a>
         <a href=""><i class="fas fa-bars" id="details-button"></i></a>
+
+        
     </footer>
+    <script>
+        function updateClock() {
+            let now = new Date();
+            let dname = now.getDay(),
+                mo = now.getMonth(),
+                dnum = now.getDate(),
+                yr = now.getFullYear(),
+                hou = now.getHours(),
+                min = now.getMinutes(),
+                sec = now.getSeconds();
+
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            let week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            let ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds"];
+            let values = [week[dname], months[mo], dnum, yr, hou, min, sec];
+
+            for (let i = 0; i < ids.length; i++)
+                document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+
+        };
+
+        function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 1);
+
+        };
+        consoleText(['Good Morning User', 'How do you feel today?', 'Have you finished your tasks?'], 'text', ['lightblue', 'lavender', 'lightpink']);
+
+        function consoleText(words, id, colors) {
+            if (colors === undefined) colors = ['#fff'];
+            let visible = true;
+            let con = document.getElementById('console');
+            let letterCount = 1;
+            let x = 1;
+            let waiting = false;
+            let target = document.getElementById(id)
+            target.setAttribute('style', 'color:' + colors[0])
+            window.setInterval(function() {
+
+                if (letterCount === 0 && waiting === false) {
+                    waiting = true;
+                    target.innerHTML = words[0].substring(0, letterCount)
+                    window.setTimeout(function() {
+                        let usedColor = colors.shift();
+                        colors.push(usedColor);
+                        let usedWord = words.shift();
+                        words.push(usedWord);
+                        x = 1;
+                        target.setAttribute('style', 'color:' + colors[0])
+                        letterCount += x;
+                        waiting = false;
+                    }, 1000)
+                } else if (letterCount === words[0].length + 1 && waiting === false) {
+                    waiting = true;
+                    window.setTimeout(function() {
+                        x = -1;
+                        letterCount += x;
+                        waiting = false;
+                    }, 1000)
+                } else if (waiting === false) {
+                    target.innerHTML = words[0].substring(0, letterCount)
+                    letterCount += x;
+                }
+            }, 120)
+            window.setInterval(function() {
+                if (visible === true) {
+                    con.className = 'console-underscore hidden'
+                    visible = false;
+
+                } else {
+                    con.className = 'console-underscore'
+
+                    visible = true;
+                }
+            }, 400)
+        }
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,7 +12,9 @@ body {
     height: 100vh;
 }
 
+
 /* header styling */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -22,20 +25,24 @@ header {
     margin-bottom: 2vh;
     width: 100%;
 }
+
 header a {
     color: black;
 }
+
 header i {
     font-size: 2em;
     padding: 5px 10px;
     border-radius: 10px;
     background-color: hsl(0, 0%, 75%);
 }
+
 header span {
     margin: 0;
     font-size: 1.5em;
     font-weight: 700;
 }
+
 header button {
     font-size: 1.5em;
     border: 0;
@@ -44,14 +51,99 @@ header button {
     background-color: hsl(0, 0%, 75%);
     height: 50px;
 }
+
 #desktop-form-header {
     display: none;
 }
 
+
+/*backbtn*/
+
+
+/*#back-btn {
+        margin-top: auto;
+        margin-bottom: 3vh;
+        margin-right: 3vw;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        background-color: #fff2f2;
+        box-shadow: 2px 2px 3px #808079;
+        padding: 0.5em 0;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }*/
+
+#back-btn {
+    text-transform: uppercase;
+    float: left;
+    min-width: 150px;
+    max-width: 250px;
+    display: block;
+    padding: 0.5em 0;
+    border-radius: 5px;
+    background: none;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+    color: rgba(255, 229, 229, 1);
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 4px solid;
+    margin-top: auto;
+    margin-bottom: 3vh;
+    margin-right: 3vw;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#back-btn::after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    opacity: 0;
+    /*color: #3f51b5;*/
+    z-index: -1;
+}
+
+#back-btn:hover::after {
+    opacity: 1;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#back-btn,
+#back-btn:after {
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+#back-btn:hover {
+    border: 4px solid #cc879e;
+}
+
+#back-btn i {
+    margin-right: 0.5rem;
+}
+
+
 /* new-task-form styling */
+
 .new-task-form {
     height: 90vh;
 }
+
 .new-task-form form {
     width: 100%;
     height: 100%;
@@ -59,6 +151,7 @@ header button {
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .new-task-form .form-row {
     width: 85%;
     display: flex;
@@ -66,66 +159,83 @@ header button {
     align-items: center;
     margin-bottom: 20px;
 }
+
 .new-task-form i {
     font-size: 2.5em;
 }
+
 .new-task-form form .form-row label {
     min-width: 25%;
 }
+
 .form-row div label {
     font-size: 1.2em;
     margin-bottom: 5px;
 }
+
 .new-task-form input {
     width: 230px;
     height: 2rem;
     font-size: 1.25rem;
     border-radius: 10px;
 }
+
 .new-task-form input[type="date"] {
     font-family: 'Arial', 'Helvetica', sans-serif;
 }
+
 .new-task-form .form-row div {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
+
 .new-task-form textarea {
     width: 230px;
     border-radius: 10px;
     font-size: 1.2rem;
     font-family: 'Arial', 'Helvetica', sans-serif;
 }
-.status, .priority{
+
+.status,
+.priority {
     display: flex;
     flex-direction: column;
     width: 30%;
 }
-.status select, .priority select {
+
+.status select,
+.priority select {
     height: 2em;
     width: 100px;
     font-size: 1rem;
     border-radius: 10px;
 }
+
 .status {
     margin-right: 70px;
 }
+
+
 /* .new-task-form footer {
     width: 100%;
     display: flex;
     justify-content: center;
 } */
+
 .new-task-form footer {
     margin-top: auto;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.new-task-form footer > div {
+
+.new-task-form footer>div {
     width: 65%;
     display: flex;
     justify-content: space-between;
 }
+
 .new-task-form footer button {
     font-size: 1.25rem;
     border: 0;
@@ -134,13 +244,16 @@ header button {
     background-color: hsl(0, 0%, 75%);
     cursor: pointer;
 }
+
 #desktop-add-button {
     display: none;
+    background-color: #FFC2AB;
 }
 
 div.side-bar {
     display: none;
 }
+
 section.desktop-main-body {
     display: none;
 }
@@ -150,7 +263,6 @@ section.desktop-main-body {
         padding: 0;
         display: flex;
     }
-
     /* side-bar styling */
     div.side-bar {
         display: flex;
@@ -161,7 +273,8 @@ section.desktop-main-body {
         padding-left: 3vw;
         width: 25vw;
         height: 100vh;
-        background-color: hsl(0, 0%, 95%);
+        background: rgb(104, 9, 121);
+        background: linear-gradient(270deg, rgba(104, 9, 121, 0) 0%, rgba(255, 229, 229, 1) 100%);
     }
     .profile {
         display: flex;
@@ -182,8 +295,8 @@ section.desktop-main-body {
         margin-right: 3vw;
         text-align: center;
         text-decoration: none;
-        color: black;
-        background-color: hsl(0, 0%, 75%);
+        /*color: black;
+        background-color: hsl(0, 0%, 75%);*/
         padding: 0.5em 0;
         border-radius: 5px;
         font-size: 1.2rem;
@@ -191,13 +304,12 @@ section.desktop-main-body {
     #back-btn i {
         margin-right: 0.5rem;
     }
-
     /* desktop-task-form styling */
     section.new-task-form {
         margin: 3rem 3rem 0;
         width: 75vw;
     }
-    section.new-task-form > form {
+    section.new-task-form>form {
         width: 100%;
         height: 100%;
         display: flex;
@@ -220,7 +332,6 @@ section.desktop-main-body {
         display: flex;
         flex-direction: column;
     }
-
     /* desktop-form footer styling */
     .new-task-form footer {
         margin-top: 2rem;
@@ -228,16 +339,16 @@ section.desktop-main-body {
         flex-direction: column;
         align-items: center;
     }
-    .new-task-form footer > div{
+    .new-task-form footer>div {
         width: 100%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 1rem;
     }
-    .new-task-form footer button{
+    .new-task-form footer button {
         width: 100%;
     }
-    .new-task-form footer > div button{
+    .new-task-form footer>div button {
         width: 45%;
     }
     .new-task-form footer i {
