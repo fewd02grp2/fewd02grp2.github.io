@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="/stylesheets/new.css">
     <title>Add New Task</title>
 </head>
+
 <body>
     <!-- Desktop Layout -->
     <div class="side-bar">
@@ -17,69 +19,70 @@
         </div>
         <a href="/tasks" id="back-btn"><i class="fas fa-long-arrow-alt-left"></i>Back</a>
     </div>
-    
+
     <!-- Mobile Layout -->
     <section class="new-task-form">
-            <form action="/tasks" method="POST">
-                <header class="header">
-                    <a href="/tasks"><i class="fas fa-long-arrow-alt-left"></i></a>
-                    <span>Add new task</span>
-                    <button type="submit">ADD</button>
-                </header>
-                <h1 id="desktop-form-header">ADD TASK</h1>
-                <div class="form-row">
-                    <label for="task-title"><i class="fas fa-tasks"></i></label>
-                    <div class="input-label">
-                        <label for="task-title">Task Title</label>
-                        <input type="text" id="task-title" name="title" placeholder="Title" required>
-                    </div>
+        <form action="/tasks" method="POST">
+            <header class="header">
+                <a href="/tasks"><i class="fas fa-long-arrow-alt-left"></i></a>
+                <span>Add new task</span>
+                <button type="submit">ADD</button>
+            </header>
+            <h1 id="desktop-form-header">ADD TASK</h1>
+            <div class="form-row">
+                <label for="task-title"><i class="fas fa-tasks"></i></label>
+                <div class="input-label">
+                    <label for="task-title">Task Title</label>
+                    <input type="text" id="task-title" name="title" placeholder="Title" required>
                 </div>
-                <div class="form-row">
-                    <label for="task-duedate"><i class="far fa-calendar-alt"></i></label>
-                    <div class="input-label">
-                        <label for="task-duedate">Due Date</label>
-                        <input type="date" id="task-duedate" name="due" required>
-                    </div>
+            </div>
+            <div class="form-row">
+                <label for="task-duedate"><i class="far fa-calendar-alt"></i></label>
+                <div class="input-label">
+                    <label for="task-duedate">Due Date</label>
+                    <input type="date" id="task-duedate" name="due" required>
                 </div>
-                <div class="form-row">
-                    <label for="task-description" class="task-description"><i class="fas fa-comment"></i></label>
-                    <div class="input-label">
-                        <label for="task-description">Description</label>
-                        <textarea name="description" id="task-description" cols="30" rows="5" placeholder="Description"></textarea>
-                    </div>
+            </div>
+            <div class="form-row">
+                <label for="task-description" class="task-description"><i class="fas fa-comment"></i></label>
+                <div class="input-label">
+                    <label for="task-description">Description</label>
+                    <textarea name="description" id="task-description" cols="30" rows="5" placeholder="Description"></textarea>
                 </div>
-                <div class="form-row">
-                    <label for="task-assignment"><i class="fas fa-user-check"></i></label>
-                    <div class="input-label">
-                        <label for="task-assignment">Assigned To</label>
-                        <input type="text" id="task-assignment" name="assignment" placeholder="Assigned To">
-                    </div>
+            </div>
+            <div class="form-row">
+                <label for="task-assignment"><i class="fas fa-user-check"></i></label>
+                <div class="input-label">
+                    <label for="task-assignment">Assigned To</label>
+                    <input type="text" id="task-assignment" name="assignment" placeholder="Assigned To">
                 </div>
-                <div class="form-row">
-                    <label for=""><i class="fas fa-list-ol"></i></label>
-                    <div id="status-priority-pair">
-                        <div class="status">
-                            <label for="task-status" class="task-status">Status</label>
-                            <select name="status" id="task-status" required>
+            </div>
+            <div class="form-row">
+                <label for=""><i class="fas fa-list-ol"></i></label>
+                <div id="status-priority-pair">
+                    <div class="status">
+                        <label for="task-status" class="task-status">Status</label>
+                        <select name="status" id="task-status" required>
                                 <option value="todo">Todo</option>
                                 <option value="inProgress">In Progress</option>
                                 <option value="review">Review</option>
                                 <option value="done">Done</option>
                             </select>
-                        </div>
-                        <div class="priority">
-                            <label for="task-priority" class="task-priority">Priority</label>
-                            <select name="priority" id="task-priority" required>
+                    </div>
+                    <div class="priority">
+                        <label for="task-priority" class="task-priority">Priority</label>
+                        <select name="priority" id="task-priority" required>
                                 <option value="High">High</option>
                                 <option value="Low">Low</option>
                             </select>
-                        </div>
                     </div>
                 </div>
-                <footer>
-                    <button type="submit" id="desktop-add-button"><i class="fas fa-plus"></i><span>ADD</span></button>
-                </footer>
-            </form>
+            </div>
+            <footer>
+                <button type="submit" id="desktop-add-button"><i class="fas fa-plus"></i><span>ADD</span></button>
+            </footer>
+        </form>
     </section>
 </body>
+
 </html>

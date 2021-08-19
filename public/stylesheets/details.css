@@ -8,6 +8,10 @@ body {
     height: 90vh;
 }
 
+.console-container {
+    height: 45px;
+}
+
 
 /* logo styling */
 
@@ -268,12 +272,13 @@ a {
 }
 
 .task-card-body .priority-High {
-    background-color: hsl(0, 0%, 50%);
+    background-color: orangered;
+    color: #fff;
 }
 
 .task-card-body .priority-Low {
-    background-color: hsl(0, 0%, 90%);
-    color: hsl(0, 0%, 40%);
+    background-color: green;
+    color: #fff;
 }
 
 .task-card-body .description {
@@ -299,7 +304,7 @@ a {
 
 .edit-delete-row a,
 .edit-delete-row button {
-    background-color: hsl(0, 0%, 75%);
+    background-color: #ffc3ad;
     padding: 10px 30px;
     border-radius: 10px;
     border: none;
@@ -309,6 +314,49 @@ a {
 
 .edit-delete-row i {
     margin-right: 10px;
+}
+
+
+/*status color*/
+
+.task-card.todo {
+    border: 2px solid #3461AC;
+    border-top: 35px solid #3461AC;
+    background-color: white;
+}
+
+.task-card.todo i {
+    color: #3461AC;
+}
+
+.task-card.inProgress {
+    border: 2px solid #8D63A6;
+    border-top: 35px solid #8D63A6;
+    background-color: white;
+}
+
+.task-card.inProgress i {
+    color: #8D63A6;
+}
+
+.task-card.review {
+    border: 2px solid #CC3333;
+    border-top: 35px solid #CC3333;
+    background-color: white;
+}
+
+.task-card.review i {
+    color: #CC3333;
+}
+
+.task-card.done {
+    border: 2px solid #3EB9B0;
+    border-top: 35px solid #3EB9B0;
+    background-color: white;
+}
+
+.task-card.done i {
+    color: #3EB9B0;
 }
 
 
@@ -372,6 +420,10 @@ footer #add-task-lg {
     }
     .nav-links a:hover {
         border-bottom: 1px solid black;
+    }
+    /*headertext*/
+    span#text {
+        font-size: 35px;
     }
     /* side-bar styling */
     .side-bar {
@@ -577,5 +629,37 @@ footer #add-task-lg {
     }
     .status-item {
         font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logo {
+        background: rgb(255, 212, 196);
+        background: linear-gradient(180deg, rgba(255, 212, 196, 0.40465693113182777) 0%, rgba(255, 255, 255, 0.6259454465379901) 100%);
+    }
+    span#text {
+        font-size: 25px;
+    }
+    footer {
+        display: none;
+    }
+    .console-container {
+        height: 45px;
+    }
+    .edit-delete-row {
+        margin-top: 300px;
+    }
+    .task-card {
+        margin-top: 25px;
+    }
+    #logout-btn {
+        font-size: 1.5em;
+        border: 0;
+        padding: 5px;
+        border-radius: 10px;
+        /*background-color: hsl(0, 0%, 75%);*/
+        background-color: transparent;
+        height: 50px;
+        display: flex;
     }
 }

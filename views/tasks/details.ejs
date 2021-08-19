@@ -31,7 +31,9 @@
         <section class="desktop-main-body">
             <div class="main-body-header">
                 <div class="greeting-msg">
-                    <h1>Good morning,<br>User.</h1>
+                    <div class='console-container'><span id='text'></span>
+                        <div class='console-underscore' id='console'></div>
+                    </div>
                 </div>
                 <div class="day-info">
                     <div class="today">
@@ -44,28 +46,34 @@
                 </div>
             </div>
             <section class="task-card-container">
-                    <div class="task-card">
-                        <div class="task-card-status">
-                            <% if (foundTask.status === 'todo') { %>
-                                <i class="fas fa-ellipsis-h"></i>
+                <div class="task-card">
+                    <div class="task-card-status">
+                        <% if (foundTask.status === 'todo') { %>
+                            <i class="fas fa-ellipsis-h"></i>
                             <% } else if (foundTask.status === 'inProgress') { %>
                                 <i class="fas fa-spinner"></i>
-                            <% } else if (foundTask.status === 'review') { %>
-                                <i class="fas fa-eye"></i>
-                            <% } else if (foundTask.status === 'done') { %>
-                                <i class="fas fa-check-circle"></i>
-                            <% } %> 
+                                <% } else if (foundTask.status === 'review') { %>
+                                    <i class="fas fa-eye"></i>
+                                    <% } else if (foundTask.status === 'done') { %>
+                                        <i class="fas fa-check-circle"></i>
+                                        <% } %>
+                    </div>
+                    <div class="task-card-body">
+                        <div class="title-priority-row">
+                            <span class="title"><%= foundTask.title %></span>
+                            <span class="priority priority-<%= foundTask.priority %>"><%= foundTask.priority %></span>
                         </div>
-                        <div class="task-card-body">
-                            <div class="title-priority-row">
-                                <span class="title"><%= foundTask.title %></span>
-                                <span class="priority priority-<%= foundTask.priority %>"><%= foundTask.priority %></span>
-                            </div>
-                            <div class="description"><%= foundTask.description %></div>
-                            <div class="due">Due: <%= foundTask.due %></div>
-                            <div class="assign">Assigned To: <%= foundTask.assignment %></div>
+                        <div class="description">
+                            <%= foundTask.description %>
+                        </div>
+                        <div class="due">Due:
+                            <%= foundTask.due %>
+                        </div>
+                        <div class="assign">Assigned To:
+                            <%= foundTask.assignment %>
                         </div>
                     </div>
+                </div>
             </section>
             <div class="edit-delete-row">
                 <a href="/tasks/<%= foundTask._id %>/edit"><i class="far fa-edit"></i>Edit</a>
@@ -80,6 +88,58 @@
         <a href="/tasks/new"><i class="fas fa-plus-circle" id="add-task-lg"></i></a>
         <a href=""><i class="fas fa-bars" id="details-button"></i></a>
     </footer>
+    <script>
+        consoleText(['Good Morning User', 'How do you feel today?', 'Have you finished your tasks?'], 'text', ['lightblue', 'lavender', 'lightpink']);
+
+        function consoleText(words, id, colors) {
+            if (colors === undefined) colors = ['#fff'];
+            let visible = true;
+            let con = document.getElementById('console');
+            let letterCount = 1;
+            let x = 1;
+            let waiting = false;
+            let target = document.getElementById(id)
+            target.setAttribute('style', 'color:' + colors[0])
+            window.setInterval(function() {
+
+                if (letterCount === 0 && waiting === false) {
+                    waiting = true;
+                    target.innerHTML = words[0].substring(0, letterCount)
+                    window.setTimeout(function() {
+                        let usedColor = colors.shift();
+                        colors.push(usedColor);
+                        let usedWord = words.shift();
+                        words.push(usedWord);
+                        x = 1;
+                        target.setAttribute('style', 'color:' + colors[0])
+                        letterCount += x;
+                        waiting = false;
+                    }, 1000)
+                } else if (letterCount === words[0].length + 1 && waiting === false) {
+                    waiting = true;
+                    window.setTimeout(function() {
+                        x = -1;
+                        letterCount += x;
+                        waiting = false;
+                    }, 1000)
+                } else if (waiting === false) {
+                    target.innerHTML = words[0].substring(0, letterCount)
+                    letterCount += x;
+                }
+            }, 120)
+            window.setInterval(function() {
+                if (visible === true) {
+                    con.className = 'console-underscore hidden'
+                    visible = false;
+
+                } else {
+                    con.className = 'console-underscore'
+
+                    visible = true;
+                }
+            }, 400)
+        }
+    </script>
 </body>
 
 </html>
