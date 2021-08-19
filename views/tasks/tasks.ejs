@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="/stylesheets/tasks.css" rel="stylesheet">
     <title>Home</title>
 </head>
@@ -56,24 +57,7 @@
                     </div>
                     <div class="date"><%= todayDate %></div>
 
-                    <!-- <div class="datetime">
-                        <div class="date">
-                            <span id="dayname">Day</span>,
-                            <span id="month">Month</span>
-                            <span id="daynum">00</span>,
-                            <span id="year">Year</span>
 
-                        </div>
-
-                        <div class="time">
-                            <span id="hour">00</span>:
-                            <span id="minutes">00</span>:
-                            <span id="seconds">00</span>
-                            <span id=""></span>
-
-
-                        </div>
-                    </div>-->
                 </div>
             </div>
             <section class="task-card-container">
@@ -118,34 +102,10 @@
         <a href="/tasks/new"><i class="fas fa-plus-circle" id="add-task-lg"></i></a>
         <a href=""><i class="fas fa-bars" id="details-button"></i></a>
 
-        
+
     </footer>
     <script>
-        function updateClock() {
-            let now = new Date();
-            let dname = now.getDay(),
-                mo = now.getMonth(),
-                dnum = now.getDate(),
-                yr = now.getFullYear(),
-                hou = now.getHours(),
-                min = now.getMinutes(),
-                sec = now.getSeconds();
-
-            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            let week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-            let ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds"];
-            let values = [week[dname], months[mo], dnum, yr, hou, min, sec];
-
-            for (let i = 0; i < ids.length; i++)
-                document.getElementById(ids[i]).firstChild.nodeValue = values[i];
-
-        };
-
-        function initClock() {
-            updateClock();
-            window.setInterval("updateClock()", 1);
-
-        };
+        moment().format("MMM Do YY");
         consoleText(['Good Morning User', 'How do you feel today?', 'Have you finished your tasks?'], 'text', ['lightblue', 'lavender', 'lightpink']);
 
         function consoleText(words, id, colors) {

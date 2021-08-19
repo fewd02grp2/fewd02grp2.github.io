@@ -87,7 +87,7 @@ header button {
     position: relative;
     z-index: 1;
     letter-spacing: 2px;
-    color: rgba(255, 229, 229, 1);
+    color: #ffaeae;
     font-weight: bold;
     font-size: 1.2rem;
     border: 4px solid;
