@@ -9,11 +9,11 @@ const moment = require('moment');
 const Task = require('./models/task')
 
 mongoose.connect('mongodb://localhost:27017/todoList', {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-})
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false
+    })
     .then(() => {
         console.log("Database Connected!")
     })
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
     res.render('login')
 })
 
-app.get('/tasks', async (req, res) => {
+app.get('/tasks', async(req, res) => {
     const { status } = req.query
     const todayDate = moment().format("Do MMM YYYY")
     const weekDay = moment().format("dddd")
@@ -47,7 +47,8 @@ app.get('/tasks', async (req, res) => {
         res.render('tasks/tasks', { tasks, todayDate, weekDay })
     }
 })
-app.post('/tasks', async (req, res) => {
+
+app.post('/tasks', async(req, res) => {
     const newTask = new Task(req.body)
     await newTask.save()
     res.redirect(`/tasks/${newTask._id}`)
@@ -57,25 +58,25 @@ app.get('/tasks/new', (req, res) => {
     res.render('tasks/new')
 })
 
-app.get('/tasks/:id', async (req, res) => {
+app.get('/tasks/:id', async(req, res) => {
     const { id } = req.params
     const foundTask = await Task.findById(id)
     res.render('tasks/details', { foundTask })
 })
 
-app.get('/tasks/:id/edit', async (req, res) => {
+app.get('/tasks/:id/edit', async(req, res) => {
     const { id } = req.params
     const foundTask = await Task.findById(id)
     res.render('tasks/edit', { foundTask })
 })
 
-app.put('/tasks/:id', async (req, res) => {
+app.put('/tasks/:id', async(req, res) => {
     const { id } = req.params
     const updatedTask = await Task.findByIdAndUpdate(id, req.body, { runValidators: true, new: true })
     res.redirect(`/tasks/${updatedTask._id}`)
 })
 
-app.delete('/tasks/:id', async (req, res) => {
+app.delete('/tasks/:id', async(req, res) => {
     const { id } = req.params
     const deletedTask = await Task.findByIdAndDelete(id)
     res.redirect('/tasks')

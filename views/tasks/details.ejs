@@ -42,11 +42,11 @@
                             <i class="fas fa-sun"></i>
                         </div>
                     </div>
-                    <div class="date">14 Aug, 2021</div>
+                    <!-- <div class="date">14 Aug, 2021</div> -->
                 </div>
             </div>
             <section class="task-card-container">
-                <div class="task-card">
+                <div class="task-card <%= foundTask.status %>">
                     <div class="task-card-status">
                         <% if (foundTask.status === 'todo') { %>
                             <i class="fas fa-ellipsis-h"></i>
