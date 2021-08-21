@@ -1,10 +1,11 @@
 {
-  "name": "final_project",
+  "name": "todolist",
   "version": "1.0.0",
   "description": "[Click here](https://fewd02grp2.github.io/) to view the page.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
