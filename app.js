@@ -1,3 +1,4 @@
+require('dotenv').config()
 const PORT = 3000
 const express = require('express');
 const app = express();
@@ -8,12 +9,14 @@ const moment = require('moment');
 
 const Task = require('./models/task')
 
-mongoose.connect('mongodb://localhost:27017/todoList', {
+const dbUrl = process.env.DB_URL
+// 'mongodb://localhost:27017/todoList'
+mongoose.connect(dbUrl, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true,
         useFindAndModify: false
-    })
+})
     .then(() => {
         console.log("Database Connected!")
     })
@@ -37,7 +40,7 @@ app.get('/', (req, res) => {
 
 app.get('/tasks', async(req, res) => {
     const { status } = req.query
-    const todayDate = moment().format("Do MMM YYYY")
+    const todayDate = moment().format("DD MMM YYYY")
     const weekDay = moment().format("dddd")
     if (status) {
         const tasks = await Task.find({ status })

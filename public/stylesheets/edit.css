@@ -20,8 +20,8 @@ header {
     justify-content: space-between;
     align-items: center;
     /*background-color: hsl(0, 0%, 95%);*/
-    background: rgb(255, 212, 196);
-    background: linear-gradient(180deg, rgba(255, 212, 196, 0.40465693113182777) 0%, rgba(255, 255, 255, 0.6259454465379901) 100%);
+    background-color: hsl(0, 100%, 95%);
+    box-shadow: 0 3px 3px hsl(0, 0%, 85%);
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 2vh;
@@ -36,7 +36,7 @@ header i {
     font-size: 2em;
     padding: 5px 10px;
     border-radius: 10px;
-    /*background-color: hsl(0, 0%, 75%);*/
+    /* background-color: hsl(0, 0%, 75%); */
     background-color: transparent;
 }
 
@@ -51,8 +51,8 @@ header button {
     border: 0;
     padding: 5px;
     border-radius: 10px;
-    /*background-color: hsl(0, 0%, 75%);*/
-    background-color: transparent;
+    background-color: hsl(0, 100%, 90%);
+    /* background-color: transparent; */
     height: 50px;
 }
 
@@ -218,8 +218,8 @@ section.desktop-main-body {
         padding-left: 3vw;
         width: 25vw;
         height: 100vh;
-        background: rgb(104, 9, 121);
-        background: linear-gradient(270deg, rgba(104, 9, 121, 0) 0%, rgba(255, 229, 229, 1) 100%);
+        background-color: hsl(0, 100%, 95%);
+        box-shadow: 5px 0 10px hsl(0, 100%, 90%);
     }
     .profile {
         display: flex;
@@ -259,7 +259,7 @@ section.desktop-main-body {
         padding: 0.5em 0;
         border-radius: 5px;
         background: none;
-        vertical-align: middle;
+        /* vertical-align: middle; */
         position: relative;
         z-index: 1;
         letter-spacing: 2px;

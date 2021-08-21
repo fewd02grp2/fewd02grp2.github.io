@@ -17,14 +17,14 @@
             <i class="far fa-user-circle"></i>
             <p>Username</p>
         </div>
-        <a href="/tasks" id="back-btn"><i class="fas fa-long-arrow-alt-left"></i>Back</a>
+        <a href="/tasks/<%= foundTask._id %>" id="back-btn"><i class="fas fa-long-arrow-alt-left"></i>Back</a>
     </div>
 
     <!-- Mobile Layout -->
     <section class="new-task-form">
         <form action="/tasks/<%= foundTask._id %>?_method=PUT" method="POST">
             <header class="header">
-                <a href="/tasks"><i class="fas fa-long-arrow-alt-left"></i></a>
+                <a href="/tasks/<%= foundTask._id %>"><i class="fas fa-long-arrow-alt-left"></i></a>
                 <span>Edit Task</span>
                 <button type="submit">Edit</button>
             </header>

@@ -23,8 +23,9 @@ body {
     display: flex;
     align-items: center;
     padding: 1em 7.5%;
-    background-color: hsl(0, 0%, 85%);
-    margin-bottom: 2vh;
+    background-color: hsl(0, 100%, 95%);
+    box-shadow: 0 5px 5px hsl(0, 100%, 90%);
+    margin-bottom: 3vh;
     justify-content: space-between;
 }
 
@@ -81,7 +82,7 @@ span#text {
 
 /*phonebtn*/
 
-.fa-plus-circle::before {
+/* .fa-plus-circle::before {
     content: "\f055";
     color: orange;
 }
@@ -94,7 +95,7 @@ span#text {
 .fa-bars {
     content: "\f0c9";
     color: #ffcc99;
-}
+} */
 
 
 /* greeting-msg styling */
@@ -120,7 +121,6 @@ div#text {
 }
 
 .day-info .weather {
-    background-color: hsl(0, 0%, 75%);
     border-radius: 10px;
     margin-right: 5px;
     height: 35px;
@@ -171,11 +171,11 @@ a {
 }
 
 .task-card {
-    background-color: hsl(0, 0%, 75%);
     border-radius: 10px;
     display: flex;
     padding: 15px;
     margin-bottom: 1.2em;
+    box-shadow: 0 3px 3px hsl(0, 0%, 75%);
 }
 
 .task-card:last-child {
@@ -304,16 +304,20 @@ footer {
     width: 100%;
     background-color: white;
     height: 65px;
+    border-top: 2px solid hsl(0, 100%, 90%);
 }
 
 footer i {
     font-size: 2em;
-    color: black;
+    color: hsl(0, 100%, 80%);
 }
 
 footer #add-task-lg {
-    color: hsl(0, 0%, 75%);
     font-size: 3.5em;
+}
+
+a.add-new-task {
+    display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -365,9 +369,9 @@ footer #add-task-lg {
         /* justify-content: center; */
         padding-left: 3vw;
         width: 25vw;
-        /*background-color: hsl(0, 100%, 95%);*/
-        background: rgb(104, 9, 121);
-        background: linear-gradient(270deg, rgba(104, 9, 121, 0) 0%, rgba(255, 229, 229, 1) 100%);
+        background-color: hsl(0, 100%, 95%);
+        box-shadow: 3px 0 5px hsl(0, 100%, 90%);
+        /* background: linear-gradient(270deg, rgba(104, 9, 121, 0) 0%, rgba(255, 229, 229, 1) 100%); */
     }
     /* side-bar profile styling */
     .profile {
@@ -376,10 +380,10 @@ footer #add-task-lg {
         margin-top: 5vh;
     }
     .profile i {
-        font-size: 3.5em;
+        font-size: 2.5em;
     }
     .profile p {
-        font-size: 1.5em;
+        font-size: 1.25em;
         font-weight: 700;
         margin-left: 1vw;
     }
@@ -636,23 +640,14 @@ footer #add-task-lg {
 
 @media screen and (max-width: 767px) {
     .logo {
-        background: rgb(255, 212, 196);
-        background: linear-gradient(180deg, rgba(255, 212, 196, 0.40465693113182777) 0%, rgba(255, 255, 255, 0.6259454465379901) 100%);
+        background-color: hsl(0, 100%, 95%);
+        box-shadow: 0 5px 5px hsl(0, 100%, 90%);
     }
-    /*.logo {
-        background: rgb(255, 229, 229);
-        background: linear-gradient(123deg, rgba(255, 229, 229, 0.4326681356136205) 0%, rgba(255, 254, 254, 1) 100%);
-    }*/
-    /*phonelogout*/
     #logout-btn {
         background-color: transparent;
     }
-    transform: rotateY(90deg);
 }
 
 .console-container {
     height: 45px;
-}
-
-
 }
