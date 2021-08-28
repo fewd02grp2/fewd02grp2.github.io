@@ -1,6 +1,7 @@
 # Todo-List / Group2
 
-[Click here](https://fewd02grp2.github.io/) to view the page.
+App hosted on heroku.
+[Click here](https://todolist-genhk.herokuapp.com/) to view the page.
 
 #### HTML/CSS source code
 | Page | Member |
