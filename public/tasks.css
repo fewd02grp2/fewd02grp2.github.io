@@ -292,7 +292,6 @@ a {
     font-size: 0.8em;
 }
 
-
 /* footer styling */
 
 footer {
@@ -317,6 +316,10 @@ footer #add-task-lg {
 }
 
 a.add-new-task {
+    display: none;
+}
+
+.hidden {
     display: none;
 }
 
@@ -580,6 +583,20 @@ a.add-new-task {
         width: 30vw;
         padding-top: 25px;
         padding-bottom: 25px;
+        position: relative;
+    }
+    .task-card .extra-functions {
+        position: absolute;
+        right: .75rem;
+        top: -1.6rem;
+        min-width: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .task-card .extra-functions i {
+        cursor: pointer;
+        color: white;
+        font-size: 1.1rem;
     }
     .task-card-body {
         height: 15vh;
@@ -591,7 +608,7 @@ a.add-new-task {
     .task-card:last-child {
         margin-bottom: 1.2em;
     }
-    a.add-new-task {
+    .add-new-task {
         /* margin-top: auto; */
         position: fixed;
         bottom: 3vh;
@@ -601,7 +618,6 @@ a.add-new-task {
         padding: 10px;
         font-size: 1.75em;
         border-radius: 50%;
-        /* background-color: hsl(0, 0%, 50%); */
         background-color: #ff9b9b;
         text-decoration: none;
         color: white;
@@ -609,7 +625,150 @@ a.add-new-task {
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
     }
+
+    /* add task modal styling */
+.modal,
+.delete-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.modal h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.modal form input,
+.modal form textarea,
+.modal form select {
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.modal form input,
+.modal form select {
+    height: 1.5rem;
+    border: 1px solid black;
+}
+
+.modal form .form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    min-width: 80%;
+}
+
+.modal form .form-row label {
+    min-width: 30%;
+}
+
+.modal form .form-row div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    min-width: 50%;
+}
+
+.modal form .form-row div label {
+    margin-bottom: 5px;
+}
+
+.modal input[type="date"] {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.modal textarea {
+    /* width: 230px; */
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.modal #status-priority-pair {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal #status-priority-pair select {
+    min-width: 100px;
+}
+
+.modal button {
+    width: 100px;
+    padding: 5px 0;
+    border: 0;
+    border-radius: 5px;
+    background-color: #ff9b9b;
+    cursor: pointer;
+}
+.modal button:disabled {
+    cursor: not-allowed;
+}
+.modal button.confirm-add {
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+.modal button i {
+    margin-right: 1rem;
+}
+
+.close-modal,
+.close-delete-modal {
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.delete-modal {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.delete-modal div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin-top: 1rem;
+}
+.delete-modal button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+.delete-modal .confirm-delete {
+    background-color: hsl(0, 100%, 65%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+
+.hidden {
+    display: none;
+}
+
     /* footer styling */
     footer {
         display: none;

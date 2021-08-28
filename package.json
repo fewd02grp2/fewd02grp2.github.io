@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/fewd02grp2/fewd02grp2.github.io#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "method-override": "^3.0.0",
     "moment": "^2.29.1",
-    "mongoose": "^5.13.7"
+    "mongoose": "^5.13.7",
+    "node-fetch": "^2.6.1"
   }
 }

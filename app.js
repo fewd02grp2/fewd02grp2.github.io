@@ -3,86 +3,24 @@ const PORT = process.env.PORT || 3000
 const express = require('express');
 const app = express();
 const path = require('path');
-const mongoose = require('mongoose')
-const methodOverride = require('method-override')
-const moment = require('moment');
 
-const Task = require('./models/task')
+const cors = require('cors')
+const corsOptions = { origin: '*', credentials: true, optionSuccessStatus: 200 }
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/todoList'
-mongoose.connect(dbUrl, {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false
-})
-    .then(() => {
-        console.log("Database Connected!")
-    })
-    .catch(err => {
-        console.log("MONGODB CONNECTION ERROR!!")
-        console.log(err)
-    })
+const Service = require('./service')
+const Controller = require('./controller')
+const createRoute = require('./routes')
 
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors(corsOptions))
 
+const service = new Service
+const controller = new Controller(service)
+const routes = createRoute(controller)
 
-// CRUD Routes
-app.get('/', (req, res) => {
-    res.render('login')
-})
-
-app.get('/tasks', async(req, res) => {
-    const { status } = req.query
-    const todayDate = moment().format("DD MMM YYYY")
-    const weekDay = moment().format("dddd")
-    if (status) {
-        const tasks = await Task.find({ status })
-        res.render('tasks/tasks', { tasks, todayDate, weekDay })
-    } else {
-        const tasks = await Task.find({})
-        res.render('tasks/tasks', { tasks, todayDate, weekDay })
-    }
-})
-
-app.post('/tasks', async(req, res) => {
-    const newTask = new Task(req.body)
-    await newTask.save()
-    res.redirect(`/tasks/${newTask._id}`)
-})
-
-app.get('/tasks/new', (req, res) => {
-    res.render('tasks/new')
-})
-
-app.get('/tasks/:id', async(req, res) => {
-    const { id } = req.params
-    const foundTask = await Task.findById(id)
-    res.render('tasks/details', { foundTask })
-})
-
-app.get('/tasks/:id/edit', async(req, res) => {
-    const { id } = req.params
-    const foundTask = await Task.findById(id)
-    res.render('tasks/edit', { foundTask })
-})
-
-app.put('/tasks/:id', async(req, res) => {
-    const { id } = req.params
-    const updatedTask = await Task.findByIdAndUpdate(id, req.body, { runValidators: true, new: true })
-    res.redirect(`/tasks/${updatedTask._id}`)
-})
-
-app.delete('/tasks/:id', async(req, res) => {
-    const { id } = req.params
-    const deletedTask = await Task.findByIdAndDelete(id)
-    res.redirect('/tasks')
-})
+app.use(routes)
 
 app.listen(PORT, () => {
     console.log("LISTENING ON PORT", PORT)
