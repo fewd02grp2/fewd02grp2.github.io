@@ -26,13 +26,11 @@ const overlay = document.querySelector('.overlay')
             const taskCard = document.createElement('div')
             taskCard.innerHTML = `
                 <div class="task-card-status">
-                    <a href="/tasks/${task._id}"><i class="fas fa-${statusIcon[task.status]}"></i></a>
+                    <i class="fas fa-${statusIcon[task.status]}"></i>
                 </div>
                 <div class="task-card-body">
                     <div>
-                        <a href="/tasks/${task._id}">
-                            <span class="title">${task.title}</span>
-                        </a>
+                       <span class="title">${task.title}</span>    
                         <span class="priority priority-${task.priority}">${task.priority}</span>
                     </div>
                     <div class="description">${task.description}</div>
