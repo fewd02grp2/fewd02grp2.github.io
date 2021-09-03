@@ -12,12 +12,55 @@ function App() {
   const [ showDeleteModal, setShowDeleteModal ] = useState(false)
   const [ showOverlay, setShowOverlay ] = useState(false)
   const [ taskID, setTaskID ] = useState()
+  const [ modalHeader, setModalHeader ] = useState('Add New Task')
+  const [ modalTitle, setModalTitle ] = useState(null)
+  const [ modalDueDate, setModalDueDate ] = useState(null)
+  const [ modalDescription, setModalDescription ] = useState(null)
+  const [ modalAssignment, setModalAssignment ] = useState(null)
+  const [ modalStatus, setModalStatus ] = useState(null)
+  const [ modalPriority, setModalPriority ] = useState(null)
+  const [ blockEditButton, setBlockEditButton ] = useState(true)
+  const [ blockAddButton, setBlockAddButton ] = useState(true)
+  const [ submitMethod, setSubmitMethod ] = useState('post')
 
   const fetchAllTasks = async () => {
     const res = await fetch("http://localhost:8080/tasks")
     const allTasks = await res.json()
-    // console.log(allTasks)
     setTasks(allTasks)
+  }
+
+  const getOneTask = async (id) => {
+    const url = `http://localhost:8080/tasks/${id}`
+    const res = await fetch(url)
+    const task = await res.json()
+    return task
+  }
+
+  const fillModal = async (id) => {
+    const task = await getOneTask(id)
+    setModalTitle(task.title)
+    setModalDueDate(task.due)
+    setModalDescription(task.description)
+    setModalAssignment(task.assignment)
+    setModalStatus(task.status)
+    setModalPriority(task.priority)
+  }
+
+  const clearModal = () => {
+    setModalTitle(null)
+    setModalDueDate(null)
+    setModalDescription(null)
+    setModalAssignment(null)
+    setModalStatus(null)
+    setModalPriority(null)
+  }
+
+  const usePostMethod = () => {
+    setSubmitMethod('post')
+  }
+
+  const usePutMethod = () => {
+    setSubmitMethod('put')
   }
 
   const toggleTaskModal = () => {
@@ -109,7 +152,14 @@ function App() {
                   status={t.status}
                   priority={t.priority}
                   key={index}
-                  onClickEditBtn={toggleTaskModal}
+                  onClickEditBtn={ async () => {
+                    await fillModal(t._id)
+                    setModalHeader('Edit Task')
+                    setBlockAddButton(true)
+                    setBlockEditButton(false)
+                    setTaskID(t._id)
+                    toggleTaskModal()
+                  }}
                   onClickDeleteBtn={() => {
                     setTaskID(t._id)
                     toggleDeleteModal()
@@ -119,12 +169,32 @@ function App() {
               )}
             </section>
             {/* Add task modal */}
-            {showTaskModal && <TaskModal formTitle="" onClick={toggleTaskModal} />}
+            {showTaskModal && <TaskModal
+              modalHeader={modalHeader}
+              taskID={taskID}
+              title={modalTitle}
+              due={modalDueDate}
+              description={modalDescription}
+              assignment={modalAssignment}
+              status={modalStatus}
+              priority={modalPriority}
+              blockAddButton={blockAddButton}
+              blockEditButton={blockEditButton}
+              submitMethod={submitMethod}
+              usePostMethod={usePostMethod}
+              usePutMethod={usePutMethod}
+              onClick={toggleTaskModal} />}
             {/* Delete task modal */}
             {showDeleteModal && <DeleteModal taskID={taskID} onClick={toggleDeleteModal} />}
             {/* Overlay */}
             {showOverlay && <Overlay onClick={toggleOverlay} />}
-            <button className="add-new-task" onClick={toggleTaskModal}>
+            <button className="add-new-task" onClick={() => {
+              setModalHeader('Add New Task')
+              setBlockAddButton(false)
+              setBlockEditButton(true)
+              clearModal()
+              toggleTaskModal()
+            }}>
               <AddButton />
             </button>
             </section>
