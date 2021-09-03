@@ -2,11 +2,39 @@ import React, { Component } from 'react'
 import './TaskModal.css'
 
 export default function TaskModal(props) {
+    const fetchOneTask = async () => {
+        const url = "http://localhost:8080/tasks/" + props.id
+        // const res = fetch()
+        console.log(url)
+    }
+    
+    const handleSubmitTask = async (task) => {
+        const setting = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(task)
+        }
+        const res = await fetch("http://localhost:8080/tasks", setting)
+      }
+
+
     return (
         <div className="modal">
                 <i className="fas fa-times close-modal" onClick={props.onClick}></i>
                 <h3 id="modal-header">Add New Task</h3>
-                <form action="/tasks" method="POST">
+                <form action="" method="POST" onSubmit={(evt) => {
+                        evt.preventDefault()
+                        const { title, due, description, assignment, status, priority } = evt.target
+                        handleSubmitTask({
+                            title: title.value,
+                            due: due.value,
+                            description: description.value,
+                            assignment: assignment.value,
+                            status: status.value,
+                            priority: priority.value
+                        })
+                        window.location.reload()
+                    }}>
                     <div className="form-row">
                         <label for="task-title"><i className="fas fa-tasks"></i></label>
                         <div className="input-label">

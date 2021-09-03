@@ -6,10 +6,6 @@
     box-shadow: 0 3px 3px hsl(0, 0%, 75%);
 }
 
-.task-card:last-child {
-    margin-bottom: 65px;
-}
-
 .task-card.todo {
     border: 2px solid #3461AC;
     border-top: 35px solid #3461AC;
@@ -93,7 +89,6 @@
     color: white;
     font-size: 0.8em;
     border-radius: 5px;
-    display: none;
 }
 
 .task-card-body .priority-High {

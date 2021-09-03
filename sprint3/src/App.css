@@ -460,9 +460,6 @@ a.add-new-task {
     .task-card-body .priority {
         display: flex;
     }
-    .task-card:last-child {
-        margin-bottom: 1.2em;
-    }
 
     button.add-new-task {
       background-color: transparent;

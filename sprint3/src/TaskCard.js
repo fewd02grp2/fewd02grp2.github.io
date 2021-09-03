@@ -24,8 +24,8 @@ export default function TaskCard(props) {
                 <div className="assign">Assigned To: {props.assignment}</div>
             </div>
             <div className="extra-functions">
-                <i className="fas fa-edit btn-edit-task" id={props._id}></i>
-                <i className="fa fa-trash btn-delete-task" id={props._id} onClick={props.onClickDeleteBtn}></i>
+                <i className="fas fa-edit btn-edit-task" id={props.id} onClick={props.onClickEditBtn}></i>
+                <i className="fa fa-trash btn-delete-task" id={props.id} onClick={props.onClickDeleteBtn}></i>
             </div>
         </div>
     )

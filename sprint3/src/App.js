@@ -68,7 +68,7 @@ function App() {
                 <p>Username</p>
             </div>
             <div className="tasks">
-                <a href="/tasks.html">All Tasks</a>
+                <a href="">All Tasks</a>
             </div>
             <div className="status">
                 <p>Status</p>
@@ -98,7 +98,9 @@ function App() {
             </div>
             <section className="task-card-container">
               {tasks.map((t, index) => 
-                <TaskCard 
+              <>
+                <TaskCard
+                  id={t._id} 
                   title={t.title}
                   due={t.due}
                   assignment={t.assignment}
@@ -106,14 +108,17 @@ function App() {
                   status={t.status}
                   priority={t.priority}
                   key={index}
-                  onClickDeleteBtn={toggleDeleteModal}
+                  onClickEditBtn={toggleTaskModal}
+                  onClickDeleteBtn={() => toggleDeleteModal(t._id)}
                 />
+                {showDeleteModal && <DeleteModal taskID={t._id} key={index} onClick={toggleDeleteModal} />}
+                </>
               )}
             </section>
             {/* Add task modal */}
             {showTaskModal && <TaskModal onClick={toggleTaskModal} />}
             {/* Delete task modal */}
-            {showDeleteModal && <DeleteModal onClick={toggleDeleteModal} />}
+            {/* {showDeleteModal && <DeleteModal onClick={toggleDeleteModal} />} */}
             {/* Overlay */}
             {showOverlay && <Overlay onClick={toggleOverlay} />}
             <button className="add-new-task" onClick={toggleTaskModal}>

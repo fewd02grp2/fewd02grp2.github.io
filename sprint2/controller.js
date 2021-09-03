@@ -80,6 +80,7 @@ class Controller {
         try {
             const { id } = req.params
             await this.service.deleteTodoList(id)
+            res.status(200).json('Task deleted')
         } catch (e) {
             res.status(500).json({
                 result: false,
