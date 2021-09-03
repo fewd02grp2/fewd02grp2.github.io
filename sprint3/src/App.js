@@ -11,6 +11,7 @@ function App() {
   const [ showTaskModal, setShowTaskModal ] = useState(false)
   const [ showDeleteModal, setShowDeleteModal ] = useState(false)
   const [ showOverlay, setShowOverlay ] = useState(false)
+  const [ taskID, setTaskID ] = useState()
 
   const fetchAllTasks = async () => {
     const res = await fetch("http://localhost:8080/tasks")
@@ -109,16 +110,18 @@ function App() {
                   priority={t.priority}
                   key={index}
                   onClickEditBtn={toggleTaskModal}
-                  onClickDeleteBtn={() => toggleDeleteModal(t._id)}
+                  onClickDeleteBtn={() => {
+                    setTaskID(t._id)
+                    toggleDeleteModal()
+                  }}
                 />
-                {showDeleteModal && <DeleteModal taskID={t._id} key={index} onClick={toggleDeleteModal} />}
                 </>
               )}
             </section>
             {/* Add task modal */}
-            {showTaskModal && <TaskModal onClick={toggleTaskModal} />}
+            {showTaskModal && <TaskModal formTitle="" onClick={toggleTaskModal} />}
             {/* Delete task modal */}
-            {/* {showDeleteModal && <DeleteModal onClick={toggleDeleteModal} />} */}
+            {showDeleteModal && <DeleteModal taskID={taskID} onClick={toggleDeleteModal} />}
             {/* Overlay */}
             {showOverlay && <Overlay onClick={toggleOverlay} />}
             <button className="add-new-task" onClick={toggleTaskModal}>
