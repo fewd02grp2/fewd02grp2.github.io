@@ -8,7 +8,7 @@ const createRoute = controller => {
     routes.get('/tasks', controller.getTodoList)
     routes.get('/tasks/:id', controller.getTask)
     routes.post('/tasks', controller.postTodoList)
-    routes.put('/tasks', controller.putTodoList)
+    // routes.put('/tasks', controller.putTodoList)
     routes.put('/tasks/:id', controller.putTodoList)
     routes.delete('/tasks/:id', controller.deleteTodoList)
     

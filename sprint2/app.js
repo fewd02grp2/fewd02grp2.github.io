@@ -1,11 +1,14 @@
 require('dotenv').config()
-const PORT = process.env.PORT || 3000 
+const PORT = process.env.PORT || 8080
 const express = require('express');
 const app = express();
 const path = require('path');
 
 const cors = require('cors')
-const corsOptions = { origin: '*', credentials: true, optionSuccessStatus: 200 }
+const corsOptions = { 
+    origin: 'http://localhost:3000' || 'http://localhost:8080',
+    credentials: true,
+    optionSuccessStatus: 200 }
 
 const Service = require('./service')
 const Controller = require('./controller')

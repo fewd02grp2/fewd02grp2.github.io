@@ -14,8 +14,9 @@ const overlay = document.querySelector('.overlay')
 
 
     const displayTaskCard = async () => {
-        const res = await fetch('http://localhost:3000/tasks')
+        const res = await fetch('http://localhost:8080/tasks')
         const dataArr = await res.json()
+        // taskCardContainer.innerHTML= null
         for (const task of dataArr) {
             const statusIcon = {
                 todo: 'ellipsis-h',
@@ -50,12 +51,12 @@ const overlay = document.querySelector('.overlay')
     }
 
     const getDayInfo = async () => {
-        const dayRes = await fetch('http://localhost:3000/dayinfo')
+        const dayRes = await fetch('http://localhost:8080/dayinfo')
         const dayData = await dayRes.json()
         weekDaySpan.innerText = dayData[0]
         todayDiv.innerText = dayData[1]
     
-        const weatherRes = await fetch('http://localhost:3000/weatherinfo')
+        const weatherRes = await fetch('http://localhost:8080/weatherinfo')
         const weatherData = await weatherRes.json()
         const weatherCode = weatherData.weather[0].id
         let weatherIcon
@@ -148,7 +149,7 @@ const renderPage = async () => {
 
     // PUT
     const fetchTask = async (id) => {
-        const url = 'http://localhost:3000/tasks/' + id
+        const url = 'http://localhost:8080/tasks/' + id
         const res = await fetch(url)
         const task = await res.json()
         // console.log(task)
@@ -195,7 +196,7 @@ const renderPage = async () => {
             priority: task.priority
         }
 
-        const url = 'http://localhost:3000/tasks/' + task._id
+        const url = 'http://localhost:8080/tasks/' + task._id
         // console.log(url)
         const setting = { 
             method: 'PUT',
@@ -203,11 +204,12 @@ const renderPage = async () => {
             body: JSON.stringify(taskObj)
         }
         const res = await fetch(url, setting)
+        window.location.reload()
     }
 
     // DELETE
     const deleteTask = async (id) => {
-        const url = 'http://localhost:3000/tasks/' + id
+        const url = 'http://localhost:8080/tasks/' + id
         const setting = { method: 'DELETE' }
         const res = await fetch(url, setting)
     }

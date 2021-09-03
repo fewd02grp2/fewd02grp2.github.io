@@ -66,8 +66,8 @@ class Controller {
         try {
             const { id } = req.params
             const updatedTask = await this.service.updateTodoList(id, req.body)
-            // res.status(200).json(updatedTask)
-            res.redirect('/tasks.html')
+            res.status(200).json(updatedTask)
+            // res.redirect('/tasks.html')
         } catch (e) {
             res.status(500).json({
                 result: false,

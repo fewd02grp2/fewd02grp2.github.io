@@ -1,0 +1,23 @@
+.add-new-task {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .add-new-task {
+        position: fixed;
+        bottom: 3vh;
+        right: 3vw;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        font-size: 28px;
+        border-radius: 50%;
+        background-color: #ff9b9b;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}

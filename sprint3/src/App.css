@@ -1,0 +1,512 @@
+/*
+#3EB9B0
+#CC3333
+#3461AC
+#8D63A6
+*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    /*background: rgb(249, 211, 255);
+    background: linear-gradient(128deg, rgba(249, 211, 255, 0.47468494233630953) 0%, rgba(0, 251, 255, 0.1245448863139006) 91%, rgba(104, 9, 121, 0.2281863428965336) 100%);*/
+}
+
+
+/* logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 1em 7.5%;
+    background-color: hsl(0, 100%, 95%);
+    box-shadow: 0 5px 5px hsl(0, 100%, 90%);
+    margin-bottom: 3vh;
+    justify-content: space-between;
+}
+
+.logo div,
+.logo div a {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 2em;
+    margin-right: 0.25em;
+}
+
+.logo span {
+    font-size: 1.25rem;
+}
+
+.logo a {
+    color: black;
+    text-decoration: none;
+    background-color: rgba(255, 240, 243, 1);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+span#text {
+    font-size: 25px;
+}
+
+
+/* container styling */
+
+.container {
+    padding: 0 7.5%;
+    margin-top: 0;
+}
+
+
+/* desktop-nav styling */
+
+.desktop-nav {
+    display: none;
+}
+
+.profile {
+    display: none;
+}
+
+.side-bar {
+    display: none;
+}
+
+
+/*phonebtn*/
+
+/* .fa-plus-circle::before {
+    content: "\f055";
+    color: orange;
+}
+
+.fa-home {
+    content: "\f015";
+    color: #ffcc99;
+}
+
+.fa-bars {
+    content: "\f0c9";
+    color: #ffcc99;
+} */
+
+
+/* greeting-msg styling */
+
+div#text {
+    font-size: 30px;
+}
+
+
+/* day-info styling */
+
+.day-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: .75em;
+}
+
+.day-info span {
+    display: none;
+}
+
+.day-info .weather {
+    border-radius: 10px;
+    margin-right: 5px;
+    height: 35px;
+    width: 35px;
+}
+
+.day-info .weather i {
+    color: black;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+.day-info .date {
+    background-color: transparent;
+    width: 135px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.task-card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* footer styling */
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 65px;
+    border-top: 2px solid hsl(0, 100%, 90%);
+}
+
+footer i {
+    font-size: 2em;
+    color: hsl(0, 100%, 80%);
+}
+
+footer #add-task-lg {
+    font-size: 3.5em;
+}
+
+a.add-new-task {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .logo {
+        display: none;
+    }
+    /* container styling */
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+        display: flex;
+        height: 100vh;
+    }
+    /* mobile-nav styling */
+    .mobile-nav {
+        display: none;
+    }
+    /* desktop-nav styling */
+    .desktop-nav {
+        display: flex;
+        margin-top: 2em;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        margin-bottom: 1em;
+        border-bottom: 1px solid hsl(0, 0%, 85%);
+    }
+    .nav-links {
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-links a {
+        color: black;
+        text-decoration: none;
+        padding-bottom: 5px;
+    }
+    .nav-links a:hover {
+        border-bottom: 1px solid black;
+    }
+    /*headertext*/
+    span#text {
+        font-size: 35px;
+    }
+    /* side-bar styling */
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        padding-left: 3vw;
+        width: 25vw;
+        background-color: hsl(0, 100%, 95%);
+        box-shadow: 3px 0 5px hsl(0, 100%, 90%);
+        /* background: linear-gradient(270deg, rgba(104, 9, 121, 0) 0%, rgba(255, 229, 229, 1) 100%); */
+    }
+    /* side-bar profile styling */
+    .profile {
+        display: flex;
+        align-items: center;
+        margin-top: 5vh;
+    }
+    .profile i {
+        font-size: 2.5em;
+    }
+    .profile p {
+        font-size: 1.25em;
+        font-weight: 700;
+        margin-left: 1vw;
+    }
+    /*#logout-btn {
+        margin-top: auto;
+        margin-bottom: 3vh;
+        margin-right: 3vw;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        background-color: #fff2f2;
+        box-shadow: 2px 2px 3px #808079;
+        padding: 0.5em 0;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }*/
+    #logout-btn {
+        text-transform: uppercase;
+        float: left;
+        min-width: 150px;
+        max-width: 250px;
+        display: block;
+        padding: 0.5em 0;
+        border-radius: 5px;
+        background: none;
+        /* vertical-align: middle; */
+        position: relative;
+        z-index: 1;
+        letter-spacing: 2px;
+        color: #ffaeae;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border: 4px solid;
+        margin-top: auto;
+        margin-bottom: 3vh;
+        margin-right: 3vw;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    #logout-btn::after {
+        content: "";
+        background-color: transparent;
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        opacity: 0;
+        /*color: #3f51b5;*/
+        z-index: -1;
+    }
+    #logout-btn:hover::after {
+        opacity: 1;
+        background-color: #fff;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    #logout-btn,
+    #logout-btn:after {
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+    }
+    #logout-btn:hover {
+        border: 4px solid #cc879e;
+    }
+    #logout-btn i {
+        margin-right: 0.5rem;
+    }
+    .tasks {
+        margin-top: 5vh;
+    }
+    .tasks a {
+        color: black;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .status {
+        margin-top: 1em;
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+    .status p {
+        font-weight: 700;
+        font-size: 1.25em;
+    }
+    .status div {
+        height: 35vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        padding-left: 2vw;
+        margin-top: 2vh;
+    }
+    .status-item {
+        display: flex;
+        align-items: center;
+    }
+    .status-item-todo {
+        color: #3461AC;
+    }
+    .status-item-inProgress {
+        color: #8D63A6;
+    }
+    .status-item-review {
+        color: #CC3333;
+    }
+    .status-item-done {
+        color: #3EB9B0;
+    }
+    .status a {
+        text-decoration: none;
+    }
+    .status a span {
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .status a i {
+        font-size: 1.5em;
+        margin-right: 0.75em;
+    }
+    /* desktop-main-body styling */
+    .desktop-main-body {
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        padding-bottom: 3vh;
+        overflow: scroll;
+    }
+    /* main-body-header styling */
+    .main-body-header {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+    /* greeting-msg styling */
+    .greeting-msg {
+        align-self: flex-start;
+        font-size: 1em;
+        min-width: 50%;
+    }
+    /* day-info styling */
+    .day-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    .day-info .today {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+    .day-info .today span {
+        display: flex;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .day-info .weather {
+        margin-right: 0;
+        margin-left: 10px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    .day-info .weather i {
+        font-size: 1.5rem;
+    }
+    .day-info .date {
+        font-size: 1.2em;
+        background: none;
+        width: auto;
+    }
+    .task-card-container {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .task-card {
+        width: 30vw;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        position: relative;
+    }
+    .task-card .extra-functions {
+        position: absolute;
+        right: .75rem;
+        top: -1.6rem;
+        min-width: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .task-card .extra-functions i {
+        cursor: pointer;
+        color: white;
+        font-size: 1.1rem;
+    }
+    .task-card-body {
+        height: 15vh;
+        justify-content: space-evenly;
+    }
+    .task-card-body .priority {
+        display: flex;
+    }
+    .task-card:last-child {
+        margin-bottom: 1.2em;
+    }
+
+    button.add-new-task {
+      background-color: transparent;
+      border: 0;
+    }
+
+    /* footer styling */
+    footer {
+        display: none;
+    }
+}
+
+@media screen and (width: 768px) {
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profile p {
+        margin: 0.5em 0;
+    }
+    .status-item {
+        font-size: 0.8em;
+    }
+    .task-card-container {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+    .task-card {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logo {
+        background-color: hsl(0, 100%, 95%);
+        box-shadow: 0 5px 5px hsl(0, 100%, 90%);
+    }
+    #logout-btn {
+        background-color: transparent;
+    }
+}
+
+.console-container {
+    height: 45px;
+}
