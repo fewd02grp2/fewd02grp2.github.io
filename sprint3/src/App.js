@@ -142,17 +142,10 @@ function App() {
             </div>
             <section className="task-card-container">
               {tasks.map((t, index) => 
-              <>
-                <TaskCard
-                  id={t._id} 
-                  title={t.title}
-                  due={t.due}
-                  assignment={t.assignment}
-                  description={t.description}
-                  status={t.status}
-                  priority={t.priority}
-                  key={index}
-                  onClickEditBtn={ async () => {
+                <TaskCard id={t._id} title={t.title} due={t.due}
+                  assignment={t.assignment} description={t.description}
+                  status={t.status} priority={t.priority} key={index}
+                  onClickEditBtn={async () => {
                     await fillModal(t._id)
                     setModalHeader('Edit Task')
                     setBlockAddButton(true)
@@ -165,38 +158,32 @@ function App() {
                     toggleDeleteModal()
                   }}
                 />
-                </>
               )}
             </section>
             {/* Add task modal */}
-            {showTaskModal && <TaskModal
-              modalHeader={modalHeader}
-              taskID={taskID}
-              title={modalTitle}
-              due={modalDueDate}
-              description={modalDescription}
-              assignment={modalAssignment}
-              status={modalStatus}
-              priority={modalPriority}
-              blockAddButton={blockAddButton}
-              blockEditButton={blockEditButton}
-              submitMethod={submitMethod}
-              usePostMethod={usePostMethod}
-              usePutMethod={usePutMethod}
-              onClick={toggleTaskModal} />}
+            {showTaskModal && 
+              <TaskModal modalHeader={modalHeader}
+                taskID={taskID} title={modalTitle} due={modalDueDate}
+                description={modalDescription} assignment={modalAssignment}
+                status={modalStatus} priority={modalPriority}
+                blockAddButton={blockAddButton} blockEditButton={blockEditButton}
+                submitMethod={submitMethod}
+                usePostMethod={usePostMethod} usePutMethod={usePutMethod}
+                toggleTaskModal={toggleTaskModal}
+              />}
             {/* Delete task modal */}
-            {showDeleteModal && <DeleteModal taskID={taskID} onClick={toggleDeleteModal} />}
+            {showDeleteModal && <DeleteModal taskID={taskID} toggleDeleteModal={toggleDeleteModal} />}
             {/* Overlay */}
-            {showOverlay && <Overlay onClick={toggleOverlay} />}
-            <button className="add-new-task" onClick={() => {
+            {showOverlay && <Overlay toggleOverlay={toggleOverlay} />}
+            <div onClick={() => {
+              clearModal()
               setModalHeader('Add New Task')
               setBlockAddButton(false)
               setBlockEditButton(true)
-              clearModal()
               toggleTaskModal()
             }}>
               <AddButton />
-            </button>
+            </div>
             </section>
     </div>
     <footer>

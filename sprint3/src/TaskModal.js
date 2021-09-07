@@ -16,7 +16,7 @@ export default function TaskModal(props) {
         setFormValue(evt.target.value)
     }
 
-    const handleAddTask = async (task) => {
+    const handleCreateTask = async (task) => {
         const url = `http://localhost:8080/tasks`
         const setting = {
           method: 'POST',
@@ -38,7 +38,7 @@ export default function TaskModal(props) {
 
     return (
         <div className="modal">
-                <i className="fas fa-times close-modal" onClick={props.onClick}></i>
+                <i className="fas fa-times close-modal" onClick={props.toggleTaskModal}></i>
                 <h3 id="modal-header">{props.modalHeader}</h3>
                 <form action="" method="" onSubmit={(evt) => {
                         evt.preventDefault()
@@ -52,7 +52,7 @@ export default function TaskModal(props) {
                             priority: priority.value
                         }
                         if (props.submitMethod === 'post') {
-                            handleAddTask(taskObj)
+                            handleCreateTask(taskObj)
                         } else if (props.submitMethod === 'put') {
                             handleUpdateTask(taskObj)
                         }

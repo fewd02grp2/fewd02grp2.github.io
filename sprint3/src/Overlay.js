@@ -3,6 +3,6 @@ import './Overlay.css'
 
 export default function Overlay(props) {
     return (
-        <div className="overlay" onClick={props.onClick}></div>
+        <div className="overlay" onClick={props.toggleOverlay}></div>
     )
 }

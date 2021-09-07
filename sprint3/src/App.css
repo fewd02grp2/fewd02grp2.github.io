@@ -461,11 +461,6 @@ a.add-new-task {
         display: flex;
     }
 
-    button.add-new-task {
-      background-color: transparent;
-      border: 0;
-    }
-
     /* footer styling */
     footer {
         display: none;
