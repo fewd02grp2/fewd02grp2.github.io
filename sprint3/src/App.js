@@ -5,7 +5,7 @@ import DeleteModal from "./DeleteModal";
 import Overlay from "./Overlay";
 import TaskCard from "./TaskCard";
 import AddButton from "./AddButton";
-import { Router as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import TodoCard from "./Component/Todo/Todo";
 import InProgressCard from "./Component/InProgress/InProgress";
 import ReviewCard from "./Component/Review/Review";
@@ -129,47 +129,45 @@ function App() {
             <div className="tasks">
               <a href="">All Tasks</a>
             </div>
-            <Router>
-              <div className="status">
-                <p>
-                  <Link to="/">Status</Link>
-                </p>
-                <div>
-                  <Link
-                    to="/Todo"
-                    className="status-item status-item-todo"
-                    id="todo"
-                  >
-                    <i className="fas fa-ellipsis-h"></i>
-                    <span>Todo</span>
-                  </Link>
-                  <Link
-                    to="/InProgress"
-                    className="status-item status-item-inProgress"
-                    id="inProgress"
-                  >
-                    <i className="fas fa-spinner"></i>
-                    <span>In Progress</span>
-                  </Link>
-                  <Link
-                    to="/Review"
-                    className="status-item status-item-review"
-                    id="review"
-                  >
-                    <i className="far fa-eye"></i>
-                    <span>Review</span>
-                  </Link>
-                  <Link
-                    to="/Done"
-                    className="status-item status-item-done"
-                    id="done"
-                  >
-                    <i className="fas fa-check-circle"></i>
-                    <span>Done</span>
-                  </Link>
-                </div>
+            <div className="status">
+              <p>
+                <Link to="/">Status</Link>
+              </p>
+              <div>
+                <Link
+                  to="/Todo"
+                  className="status-item status-item-todo"
+                  id="todo"
+                >
+                  <i className="fas fa-ellipsis-h"></i>
+                  <span>Todo</span>
+                </Link>
+                <Link
+                  to="/InProgress"
+                  className="status-item status-item-inProgress"
+                  id="inProgress"
+                >
+                  <i className="fas fa-spinner"></i>
+                  <span>In Progress</span>
+                </Link>
+                <Link
+                  to="/Review"
+                  className="status-item status-item-review"
+                  id="review"
+                >
+                  <i className="far fa-eye"></i>
+                  <span>Review</span>
+                </Link>
+                <Link
+                  to="/Done"
+                  className="status-item status-item-done"
+                  id="done"
+                >
+                  <i className="fas fa-check-circle"></i>
+                  <span>Done</span>
+                </Link>
               </div>
-            </Router>
+            </div>
 
             <a href="/" id="logout-btn" className="button-os">
               <i className="fas fa-sign-out-alt"></i>Logout
