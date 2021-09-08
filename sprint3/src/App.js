@@ -10,6 +10,8 @@ import TodoCard from "./Component/Todo/Todo";
 import InProgressCard from "./Component/InProgress/InProgress";
 import ReviewCard from "./Component/Review/Review";
 import DoneCard from "./Component/Done/Done";
+import ChangeText from "./ChangeText";
+import Getday from "./Getday";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -179,9 +181,12 @@ function App() {
                 <div className="console-container">
                   <span id="text"></span>
                   <div className="console-underscore" id="console"></div>
+
+                  <ChangeText />
                 </div>
               </div>
               <div className="day-info">
+                <Getday />
                 <div className="today">
                   <span id="weekday-span"></span>
                   <div className="weather" id="weather-div"></div>

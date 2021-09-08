@@ -8,6 +8,8 @@ export default function Done() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const [showTaskModal, setShowTaskModal] = useState(false);
+  const [modalHeader, setModalHeader] = useState("Edit Task");
+
   useEffect(() => {
     const getOneTask = async () => {
       const url = `http://localhost:8080/tasks`;
