@@ -25,8 +25,7 @@ export default function Done() {
       setShowTaskModal((curState) => !curState);
       setShowOverlay((curState) => !curState);
     };
-  }),
-    [];
+  }, []);
 
   useEffect(() => {
     const toggleDeleteModal = () => {
