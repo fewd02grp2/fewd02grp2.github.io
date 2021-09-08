@@ -1,42 +1,70 @@
-import React, { Component } from "react";
-import { useState } from "react";
 import "./Todo.css";
+import App from "../../App";
+import React, { useState, useEffect } from "react";
+import TaskCard from "../../TaskCard";
 
-export default function TodoCard(props) {
-  const statusIcon = {
-    todo: "ellipsis-h",
-  };
+export default function Todo() {
+  const [tasks, setTasks] = useState([]);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [showTaskModal, setShowTaskModal] = useState(false);
+  useEffect(() => {
+    const getOneTask = async () => {
+      const url = `http://localhost:8080/tasks`;
+      const res = await fetch(url);
+      const task = await res.json();
+      setTasks(task);
+    };
+    getOneTask();
+    return () => {
+      // cleanup
+    };
+  }, []);
+  useEffect(() => {
+    const toggleTaskModal = () => {
+      setShowTaskModal((curState) => !curState);
+      setShowOverlay((curState) => !curState);
+    };
+  }, []);
 
-  if (props.status === { id: "todo" }) {
-    return (
-      <div className={"task-card " + props.status}>
-        <div className="task-card-status">
-          <i className={"fa fa-" + statusIcon[props.status]}></i>
-        </div>
-        <div className="task-card-body">
-          <div>
-            <span className="title">{props.title}</span>
-            <span className={"priority priority-" + props.priority}>
-              {props.priority}
-            </span>
-          </div>
-          <div className="description">{props.description}</div>
-          <div className="due">Due: {props.due}</div>
-          <div className="assign">Assigned To: {props.assignment}</div>
-        </div>
-        <div className="extra-functions">
-          <i
-            className="fas fa-edit btn-edit-task"
-            id={props.id}
-            onClick={props.onClickEditBtn}
-          ></i>
-          <i
-            className="fa fa-trash btn-delete-task"
-            id={props.id}
-            onClick={props.onClickDeleteBtn}
-          ></i>
-        </div>
-      </div>
-    );
-  }
+  useEffect(() => {
+    const toggleDeleteModal = () => {
+      setShowDeleteModal((curState) => !curState);
+      setShowOverlay((curState) => !curState);
+    };
+  }, []);
+
+  return (
+    <div>
+      {tasks
+        .filter((t) => t.status === "todo")
+        .map((t) => {
+          return (
+            <TaskCard
+              id={t._id}
+              title={t.title}
+              due={t.due}
+              assignment={t.assignment}
+              description={t.description}
+              status={t.status}
+              priority={t.priority}
+              key={t._id}
+
+              // onClickEditBtn={async () => {
+              //   await fillModal(t._id);
+              //   setModalHeader("Edit Task");
+              //   setBlockAddButton(true);
+              //   setBlockEditButton(false);
+              //   setTaskID(t._id);
+              //   toggleTaskModal();
+              // }}
+              // onClickDeleteBtn={() => {
+              //   setTaskID(t._id);
+              //   toggleDeleteModal();
+              // }}
+            />
+          );
+        })}
+    </div>
+  );
 }

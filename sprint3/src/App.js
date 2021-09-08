@@ -198,6 +198,7 @@ function App() {
 
               <Route path="/Done" component={DoneCard} />
 
+              {/* <Route> */}
               {tasks.map((t, index) => (
                 <TaskCard
                   id={t._id}
@@ -222,6 +223,7 @@ function App() {
                   }}
                 />
               ))}
+              {/* </Route path='/'> */}
             </section>
             {/* Add task modal */}
             {showTaskModal && (
