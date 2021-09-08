@@ -5,7 +5,7 @@ import DeleteModal from "./DeleteModal";
 import Overlay from "./Overlay";
 import TaskCard from "./TaskCard";
 import AddButton from "./AddButton";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Router as Router, Switch, Route, Link } from "react-router-dom";
 import TodoCard from "./Component/Todo/Todo";
 import InProgressCard from "./Component/InProgress/InProgress";
 import ReviewCard from "./Component/Review/Review";
@@ -130,54 +130,45 @@ function App() {
               <a href="">All Tasks</a>
             </div>
             <Router>
-              <Switch>
-                <div className="status">
-                  <p>
-                    <Link to="/">Status</Link>
-                  </p>
-                  <div>
-                    <Link
-                      to="/Todo"
-                      className="status-item status-item-todo"
-                      id="todo"
-                    >
-                      <Route path="/Todo" component={TodoCard} />
-
-                      <i className="fas fa-ellipsis-h"></i>
-                      <span>Todo</span>
-                    </Link>
-                    <Link
-                      to="/InProgress"
-                      className="status-item status-item-inProgress"
-                      id="inProgress"
-                    >
-                      <Route path="/InProgress" component={InProgressCard} />
-
-                      <i className="fas fa-spinner"></i>
-                      <span>In Progress</span>
-                    </Link>
-                    <Link
-                      to="/Review"
-                      className="status-item status-item-review"
-                      id="review"
-                    >
-                      <Route path="/Review" component={ReviewCard} />
-
-                      <i className="far fa-eye"></i>
-                      <span>Review</span>
-                    </Link>
-                    <Link
-                      to="/Done"
-                      className="status-item status-item-done"
-                      id="done"
-                    >
-                      <i className="fas fa-check-circle"></i>
-                      <span>Done</span>
-                      <Route path="/Done" component={DoneCard} />
-                    </Link>
-                  </div>
+              <div className="status">
+                <p>
+                  <Link to="/">Status</Link>
+                </p>
+                <div>
+                  <Link
+                    to="/Todo"
+                    className="status-item status-item-todo"
+                    id="todo"
+                  >
+                    <i className="fas fa-ellipsis-h"></i>
+                    <span>Todo</span>
+                  </Link>
+                  <Link
+                    to="/InProgress"
+                    className="status-item status-item-inProgress"
+                    id="inProgress"
+                  >
+                    <i className="fas fa-spinner"></i>
+                    <span>In Progress</span>
+                  </Link>
+                  <Link
+                    to="/Review"
+                    className="status-item status-item-review"
+                    id="review"
+                  >
+                    <i className="far fa-eye"></i>
+                    <span>Review</span>
+                  </Link>
+                  <Link
+                    to="/Done"
+                    className="status-item status-item-done"
+                    id="done"
+                  >
+                    <i className="fas fa-check-circle"></i>
+                    <span>Done</span>
+                  </Link>
                 </div>
-              </Switch>
+              </div>
             </Router>
 
             <a href="/" id="logout-btn" className="button-os">
@@ -201,6 +192,14 @@ function App() {
               </div>
             </div>
             <section className="task-card-container">
+              <Route path="/Todo" component={TodoCard} />
+
+              <Route path="/InProgress" component={InProgressCard} />
+
+              <Route path="/Review" component={ReviewCard} />
+
+              <Route path="/Done" component={DoneCard} />
+
               {tasks.map((t, index) => (
                 <TaskCard
                   id={t._id}
