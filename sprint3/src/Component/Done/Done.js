@@ -9,6 +9,7 @@ export default function Done() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [showTaskModal, setShowTaskModal] = useState(false);
   const [modalHeader, setModalHeader] = useState("Edit Task");
+  const [taskID, setTaskID] = useState();
 
   useEffect(() => {
     const getOneTask = async () => {
@@ -51,19 +52,18 @@ export default function Done() {
               status={t.status}
               priority={t.priority}
               key={t._id}
-
-              // onClickEditBtn={async () => {
-              //   await fillModal(t._id);
-              //   setModalHeader("Edit Task");
-              //   setBlockAddButton(true);
-              //   setBlockEditButton(false);
-              //   setTaskID(t._id);
-              //   toggleTaskModal();
-              // }}
-              // onClickDeleteBtn={() => {
-              //   setTaskID(t._id);
-              //   toggleDeleteModal();
-              // }}
+              //   onClickEditBtn={async () => {
+              //     await fillModal(t._id);
+              //     setModalHeader("Edit Task");
+              //     setBlockAddButton(true);
+              //     setBlockEditButton(false);
+              //     setTaskID(t._id);
+              //     toggleTaskModal();
+              //   }}
+              //   onClickDeleteBtn={() => {
+              //     setTaskID(t._id);
+              //     toggleDeleteModal();
+              //   }}
             />
           );
         })}

@@ -6,12 +6,13 @@ import Overlay from "./Overlay";
 import TaskCard from "./TaskCard";
 import AddButton from "./AddButton";
 import { Switch, Route, Link } from "react-router-dom";
-import TodoCard from "./Component/Todo/Todo";
-import InProgressCard from "./Component/InProgress/InProgress";
-import ReviewCard from "./Component/Review/Review";
-import DoneCard from "./Component/Done/Done";
+import Todo from "./Component/Todo/Todo";
+import InProgress from "./Component/InProgress/InProgress";
+import Review from "./Component/Review/Review";
+import Done from "./Component/Done/Done";
 import ChangeText from "./ChangeText";
 import Getday from "./Getday";
+// import Weather from "./Weather";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -29,6 +30,7 @@ function App() {
   const [blockEditButton, setBlockEditButton] = useState(true);
   const [blockAddButton, setBlockAddButton] = useState(true);
   const [submitMethod, setSubmitMethod] = useState("post");
+  const [showTask, setShowTask] = useState(true);
 
   const fetchAllTasks = async () => {
     const res = await fetch("http://localhost:8080/tasks");
@@ -86,6 +88,10 @@ function App() {
     setShowOverlay(false);
   };
 
+  const showTaskCard = () => {
+    showTask(true);
+  };
+
   useEffect(() => {
     fetchAllTasks();
   }, []);
@@ -129,7 +135,7 @@ function App() {
               <p>Username</p>
             </div>
             <div className="tasks">
-              <a href="">All Tasks</a>
+              <Link to="/">All Tasks</Link>
             </div>
             <div className="status">
               <p>
@@ -185,50 +191,53 @@ function App() {
                   <ChangeText />
                 </div>
               </div>
+
               <div className="day-info">
+                <i class="fas fa-cloud-rain"></i>
                 <Getday />
+
+                {/* <Weather /> */}
                 <div className="today">
                   <span id="weekday-span"></span>
+
                   <div className="weather" id="weather-div"></div>
                 </div>
                 <div className="date" id="today-div"></div>
               </div>
             </div>
             <section className="task-card-container">
-              <Route path="/Todo" component={TodoCard} />
-
-              <Route path="/InProgress" component={InProgressCard} />
-
-              <Route path="/Review" component={ReviewCard} />
-
-              <Route path="/Done" component={DoneCard} />
-
+              <Route path="/Todo" component={Todo} />
+              <Route path="/InProgress" component={InProgress} />
+              <Route path="/Review" component={Review} />
+              <Route path="/Done" component={Done} />
               {/* <Route> */}
-              {tasks.map((t, index) => (
-                <TaskCard
-                  id={t._id}
-                  title={t.title}
-                  due={t.due}
-                  assignment={t.assignment}
-                  description={t.description}
-                  status={t.status}
-                  priority={t.priority}
-                  key={index}
-                  onClickEditBtn={async () => {
-                    await fillModal(t._id);
-                    setModalHeader("Edit Task");
-                    setBlockAddButton(true);
-                    setBlockEditButton(false);
-                    setTaskID(t._id);
-                    toggleTaskModal();
-                  }}
-                  onClickDeleteBtn={() => {
-                    setTaskID(t._id);
-                    toggleDeleteModal();
-                  }}
-                />
-              ))}
-              {/* </Route path='/'> */}
+              <Route path="/" exact>
+                {tasks.map((t, index) => (
+                  <TaskCard
+                    id={t._id}
+                    title={t.title}
+                    due={t.due}
+                    assignment={t.assignment}
+                    description={t.description}
+                    status={t.status}
+                    priority={t.priority}
+                    key={index}
+                    onClickEditBtn={async () => {
+                      await fillModal(t._id);
+                      setModalHeader("Edit Task");
+                      setBlockAddButton(true);
+                      setBlockEditButton(false);
+                      setTaskID(t._id);
+                      toggleTaskModal();
+                    }}
+                    onClickDeleteBtn={() => {
+                      setTaskID(t._id);
+                      toggleDeleteModal();
+                    }}
+                  />
+                ))}
+                {/* </Route path='/'> */}
+              </Route>
             </section>
             {/* Add task modal */}
             {showTaskModal && (
