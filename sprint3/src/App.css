@@ -141,7 +141,7 @@ div#text {
   color: lightblue;
 }
 
-.task-card-container {
+.task-card-container > div {
   display: flex;
   flex-direction: column;
 }
@@ -428,7 +428,7 @@ a.add-new-task {
     background: none;
     width: auto;
   }
-  .task-card-container {
+  .task-card-container > div {
     flex-flow: row wrap;
     justify-content: space-between;
   }

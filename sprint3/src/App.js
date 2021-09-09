@@ -177,9 +177,9 @@ function App() {
               </div>
             </div>
 
-            <a href="/" id="logout-btn" className="button-os">
+            {/* <a href="/" id="logout-btn" className="button-os">
               <i className="fas fa-sign-out-alt"></i>Logout
-            </a>
+            </a> */}
           </div>
           <section className="desktop-main-body">
             <div className="main-body-header">
@@ -212,6 +212,7 @@ function App() {
               <Route path="/Done" component={Done} />
               {/* <Route> */}
               <Route path="/" exact>
+                <div>
                 {tasks.map((t, index) => (
                   <TaskCard
                     id={t._id}
@@ -236,6 +237,7 @@ function App() {
                     }}
                   />
                 ))}
+                </div>
                 {/* </Route path='/'> */}
               </Route>
             </section>

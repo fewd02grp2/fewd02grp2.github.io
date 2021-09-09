@@ -1,0 +1,75 @@
+.login-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+}
+
+.login-modal form {
+    width: 60%;
+    text-align: center;
+}
+
+.login-modal .form-row {
+    margin-top: 20px;
+}
+
+.login-modal .username-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-modal form label {
+    margin-right: 2rem;
+}
+
+.login-modal p.no-acct {
+    color: #ff9b9b;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login-modal p.return-msg {
+    cursor: pointer;
+}
+
+.login-modal p.return-msg i {
+    margin-right: 10px;
+}
+
+.login-modal p.success-msg {
+    color: green;
+    font-weight: 700;
+}
+
+.login-modal p.success-msg i {
+    margin-right: 10px;
+}
+
+
+.login-modal p.error-msg {
+    color: red;
+    font-weight: 700;
+}
+
+.login-modal p.error-msg i {
+    margin-right: 10px;
+}
+
+.login-modal button {
+    padding: .5rem 2rem;
+    border: 0;
+    border-radius: 10px;
+    background-color: #ff9b9b;
+    cursor: pointer;
+}
