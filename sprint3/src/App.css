@@ -142,7 +142,7 @@ div#text {
   margin: 2px 2px;
 }
 
-.task-card-container {
+.task-card-container > div {
   display: flex;
   flex-direction: column;
 }
@@ -429,7 +429,7 @@ a.add-new-task {
     background: none;
     width: auto;
   }
-  .task-card-container {
+  .task-card-container > div {
     flex-flow: row wrap;
     justify-content: space-between;
   }
