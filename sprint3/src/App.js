@@ -193,7 +193,7 @@ function App() {
               </div>
 
               <div className="day-info">
-                <i class="fas fa-cloud-rain"></i>
+                <i class="fas fa-sun"></i>
                 <Getday />
 
                 {/* <Weather /> */}

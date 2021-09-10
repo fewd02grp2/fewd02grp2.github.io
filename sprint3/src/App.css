@@ -138,7 +138,8 @@ div#text {
 }
 
 .day-info i {
-  color: lightblue;
+  color: #ef8e38;
+  margin: 2px 2px;
 }
 
 .task-card-container {
